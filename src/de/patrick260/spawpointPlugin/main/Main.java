@@ -35,6 +35,8 @@ public class Main extends JavaPlugin {
         registerCommands();
         registerListener();
 
+        console.sendMessage(plugin_prefix + "§aDas Plugin wurde erfolgreich aktiviert!");
+
     }
 
     //Things that happens when the server disable the plugin.
@@ -58,7 +60,7 @@ public class Main extends JavaPlugin {
     //Setup the default config file
     private void setupDefaultConfig() {
 
-        config.addDefault("settings.prefix", "§7[§2SpawnpointPlugin§7] §f");
+        config.addDefault("plugin.prefix", "§7[§2SpawnpointPlugin§7] §f");
 
         config.options().copyDefaults(true);
 
@@ -79,7 +81,14 @@ public class Main extends JavaPlugin {
     //Returns the plugin prefix
     public String getPrefix() {
 
-        return config.getString("settings.prefix");
+        return config.getString("plugin.prefix");
+
+    }
+
+    //Returns the ConsoleCommandSender
+    public ConsoleCommandSender getConsole() {
+
+        return console;
 
     }
 
