@@ -74,7 +74,7 @@ public class Main extends JavaPlugin {
 
         config.addDefault("data.spawnpoint.world", Bukkit.getWorlds().get(0).getName());
         config.addDefault("data.spawnpoint.x", 0);
-        config.addDefault("data.spawnpoint.y", 63);
+        config.addDefault("data.spawnpoint.y", 64);
         config.addDefault("data.spawnpoint.z", 0);
         config.addDefault("data.spawnpoint.yaw", 0);
         config.addDefault("data.spawnpoint.pitch", 0);
