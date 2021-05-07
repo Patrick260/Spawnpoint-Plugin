@@ -69,6 +69,7 @@ public class Main extends JavaPlugin {
 
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new PlayerJoinListener(), this);
+        console.sendMessage(plugin_prefix + "§aPlayerJoinListener.java wurde erfolgreich geladen und registriert!");
 
     }
 
