@@ -7,3 +7,6 @@ commands:
   setspawnpoint:
     description: Set the spawnpoint.
     usage: /setspawnpoint <world, x, y, z> <yaw, pitch>
+  spawn:
+    description: Teleport you to the spawn.
+    usage: /spawn

@@ -1,6 +1,7 @@
 package de.patrick260.spawpointPlugin.main;
 
 import de.patrick260.spawpointPlugin.commands.SetspawnpointCommand;
+import de.patrick260.spawpointPlugin.commands.SpawnCommand;
 import de.patrick260.spawpointPlugin.listeners.PlayerJoinListener;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
@@ -57,6 +58,9 @@ public class Main extends JavaPlugin {
 
         getCommand("setspawnpoint").setExecutor(new SetspawnpointCommand());
         console.sendMessage(plugin_prefix + "§aSetspawnpointCommand.java wurde erfolgreich geladen und registriert!");
+
+        getCommand("spawn").setExecutor(new SpawnCommand());
+        console.sendMessage(plugin_prefix + "§aSpawnCommand.java wurde erfolgreich geladen und registriert!");
 
     }
 
