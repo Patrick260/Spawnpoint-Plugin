@@ -53,6 +53,10 @@ public class SetspawnpointCommand implements CommandExecutor {
 
                     commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
 
+                } else {
+
+                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDer Spawnpoint wurde nicht gesetzt da die angegebene Welt nicht existiert!");
+
                 }
 
             } else if (args.length == 6) {
@@ -69,6 +73,10 @@ public class SetspawnpointCommand implements CommandExecutor {
                     Main.getPlugin().saveConfig();
 
                     commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+
+                } else {
+
+                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDer Spawnpoint wurde nicht gesetzt da die angegebene Welt nicht existiert!");
 
                 }
 
