@@ -32,6 +32,8 @@ public class SetspawnpointCommand implements CommandExecutor {
 
                     Main.getPlugin().saveConfig();
 
+                    player.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf deine Position gesetzt!");
+
                 } else {
 
                     commandSender.sendMessage("§6Bitte benutze §c/setspawnpoint (world, x, y, z) (yaw, pitch) §6!");
@@ -49,6 +51,8 @@ public class SetspawnpointCommand implements CommandExecutor {
 
                     Main.getPlugin().saveConfig();
 
+                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+
                 }
 
             } else if (args.length == 6) {
@@ -63,6 +67,8 @@ public class SetspawnpointCommand implements CommandExecutor {
                     config.set("data.spawnpoint.pitch", args[5]);
 
                     Main.getPlugin().saveConfig();
+
+                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
 
                 }
 
