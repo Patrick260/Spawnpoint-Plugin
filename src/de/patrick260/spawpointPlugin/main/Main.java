@@ -42,7 +42,7 @@ public class Main extends JavaPlugin {
     //Things that happens when the server disable the plugin.
     public void onDisable() {
 
-
+        //empty
 
     }
 
@@ -61,6 +61,15 @@ public class Main extends JavaPlugin {
     private void setupDefaultConfig() {
 
         config.addDefault("plugin.prefix", "§7[§2SpawnpointPlugin§7] §f");
+
+        config.addDefault("permissions.commands.admin.setspawnpoint", "spawnpointplugin.commands.admin.setspawnpoint");
+
+        config.addDefault("data.spawnpoint.world", Bukkit.getWorlds().get(0));
+        config.addDefault("data.spawnpoint.x", 0);
+        config.addDefault("data.spawnpoint.y", 63);
+        config.addDefault("data.spawnpoint.z", 0);
+        config.addDefault("data.spawnpoint.yaw", 0);
+        config.addDefault("data.spawnpoint.pitch", 0);
 
         config.options().copyDefaults(true);
 
