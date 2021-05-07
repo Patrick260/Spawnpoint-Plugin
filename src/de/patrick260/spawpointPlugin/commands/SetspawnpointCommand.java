@@ -30,6 +30,8 @@ public class SetspawnpointCommand implements CommandExecutor {
                     config.set("data.spawnpoint.yaw", player.getLocation().getYaw());
                     config.set("data.spawnpoint.pitch", player.getLocation().getPitch());
 
+                    Main.getPlugin().saveConfig();
+
                 } else {
 
                     commandSender.sendMessage("§6Bitte benutze §c/setspawnpoint (world, x, y, z) (yaw, pitch) §6!");
@@ -45,6 +47,8 @@ public class SetspawnpointCommand implements CommandExecutor {
                     config.set("data.spawnpoint.y", args[2]);
                     config.set("data.spawnpoint.z", args[3]);
 
+                    Main.getPlugin().saveConfig();
+
                 }
 
             } else if (args.length == 6) {
@@ -57,6 +61,8 @@ public class SetspawnpointCommand implements CommandExecutor {
                     config.set("data.spawnpoint.z", args[3]);
                     config.set("data.spawnpoint.yaw", args[4]);
                     config.set("data.spawnpoint.pitch", args[5]);
+
+                    Main.getPlugin().saveConfig();
 
                 }
 
@@ -72,7 +78,7 @@ public class SetspawnpointCommand implements CommandExecutor {
 
         }
 
-        return false;
+        return true;
 
     }
 
