@@ -1,3 +1,6 @@
+/* Todo
+    - add a command for players to set the spawnpoint with cordinates but without world
+ */
 package de.patrick260.spawpointPlugin.commands;
 
 import de.patrick260.spawpointPlugin.main.Main;
