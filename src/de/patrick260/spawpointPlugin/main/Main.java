@@ -27,6 +27,8 @@ public class Main extends JavaPlugin {
     //Things that happens when the server load the plugin.
     public void onEnable() {
 
+        plugin = this;
+
         setupDefaultConfig();
         console.sendMessage("[SpawnpointPlugin] config.yml wurde erfolgreich geladen!");
 
