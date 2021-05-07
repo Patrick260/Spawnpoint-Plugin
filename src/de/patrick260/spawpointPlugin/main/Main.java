@@ -1,9 +1,11 @@
 package de.patrick260.spawpointPlugin.main;
 
 import de.patrick260.spawpointPlugin.commands.SetspawnpointCommand;
+import de.patrick260.spawpointPlugin.listeners.PlayerJoinListener;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -61,7 +63,8 @@ public class Main extends JavaPlugin {
     //Register the listeners of the plugin.
     private void registerListener() {
 
-
+        PluginManager pluginManager = Bukkit.getPluginManager();
+        pluginManager.registerEvents(new PlayerJoinListener(), this);
 
     }
 
@@ -71,6 +74,9 @@ public class Main extends JavaPlugin {
         config.addDefault("plugin.prefix", "§7[§2SpawnpointPlugin§7] §f");
 
         config.addDefault("permissions.commands.admin.setspawnpoint", "spawnpointplugin.commands.admin.setspawnpoint");
+        config.addDefault("permissions.commands.spawn.teleport", "spawnpointplugin.commands.spawn.teleport");
+
+        config.addDefault("settings.commands.spawn.timer", 3);
 
         config.addDefault("data.spawnpoint.world", Bukkit.getWorlds().get(0).getName());
         config.addDefault("data.spawnpoint.x", 0);
