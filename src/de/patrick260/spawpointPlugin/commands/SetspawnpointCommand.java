@@ -78,6 +78,27 @@ public class SetspawnpointCommand implements CommandExecutor {
 
                 }
 
+            } else if (args.length == 5) {
+
+                if (commandSender instanceof Player) {
+
+                    config.set("data.spawnpoint.world", Bukkit.getWorld(((Player) commandSender).getWorld().getName()).getName());
+                    config.set("data.spawnpoint.x", Integer.parseInt(args[0]));
+                    config.set("data.spawnpoint.y", Integer.parseInt(args[1]));
+                    config.set("data.spawnpoint.z", Integer.parseInt(args[2]));
+                    config.set("data.spawnpoint.yaw", Integer.parseInt(args[3]));
+                    config.set("data.spawnpoint.pitch", Integer.parseInt(args[4]));
+
+                    Main.getPlugin().saveConfig();
+
+                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+
+                } else {
+
+                    commandSender.sendMessage("§6Bitte benutze §c/setspawnpoint (world, x, y, z) (yaw, pitch) §6!");
+
+                }
+
             } else if (args.length == 6) {
 
                 if (Bukkit.getWorld(args[0]) != null) {
