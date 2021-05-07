@@ -23,7 +23,7 @@ public class SetspawnpointCommand implements CommandExecutor {
 
                     Player player = (Player) commandSender;
 
-                    config.set("data.spawnpoint.world", Bukkit.getWorld(player.getWorld().getName()));
+                    config.set("data.spawnpoint.world", Bukkit.getWorld(player.getWorld().getName()).getName());
                     config.set("data.spawnpoint.x", player.getLocation().getX());
                     config.set("data.spawnpoint.y", player.getLocation().getY());
                     config.set("data.spawnpoint.z", player.getLocation().getZ());
