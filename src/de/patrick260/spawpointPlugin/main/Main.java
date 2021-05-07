@@ -1,6 +1,6 @@
 package de.patrick260.spawpointPlugin.main;
 
-import de.patrick260.spawpointPlugin.commands.SetspawnpointCommand;
+import de.patrick260.spawpointPlugin.commands.SetSpawnpointCommand;
 import de.patrick260.spawpointPlugin.commands.SpawnCommand;
 import de.patrick260.spawpointPlugin.listeners.PlayerDeathListener;
 import de.patrick260.spawpointPlugin.listeners.PlayerJoinListener;
@@ -57,7 +57,7 @@ public class Main extends JavaPlugin {
     //Register the commands of the plugin.
     private void registerCommands() {
 
-        getCommand("setspawnpoint").setExecutor(new SetspawnpointCommand());
+        getCommand("setspawnpoint").setExecutor(new SetSpawnpointCommand());
         console.sendMessage(plugin_prefix + "§aSetspawnpointCommand.java wurde erfolgreich geladen und registriert!");
 
         getCommand("spawn").setExecutor(new SpawnCommand());
@@ -83,8 +83,8 @@ public class Main extends JavaPlugin {
 
         config.addDefault("plugin.prefix", "§7[§2SpawnpointPlugin§7] §f");
 
-        config.addDefault("permissions.commands.admin.setspawnpoint", "spawnpointplugin.commands.admin.setspawnpoint");
-        config.addDefault("permissions.commands.spawn.teleport", "spawnpointplugin.commands.spawn.teleport");
+        config.addDefault("permissions.commands.admin.setSpawnpoint", "spawnpointPlugin.commands.admin.setSpawnpoint");
+        config.addDefault("permissions.commands.spawn.teleport", "spawnpointPlugin.commands.spawn.teleport");
 
         config.addDefault("settings.commands.spawn.timer", 3);
 

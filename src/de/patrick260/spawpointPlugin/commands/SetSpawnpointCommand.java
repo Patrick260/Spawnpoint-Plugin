@@ -8,14 +8,14 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-public class SetspawnpointCommand implements CommandExecutor {
+public class SetSpawnpointCommand implements CommandExecutor {
 
     private FileConfiguration config = Main.getPlugin().getConfig();
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
 
-        if (commandSender.hasPermission(config.getString("permissions.commands.admin.setspawnpoint"))) {
+        if (commandSender.hasPermission(config.getString("permissions.commands.admin.setSpawnpoint"))) {
 
             if (args.length == 0) {
 
