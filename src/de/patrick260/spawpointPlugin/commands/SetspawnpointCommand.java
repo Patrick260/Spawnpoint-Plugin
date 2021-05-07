@@ -44,7 +44,7 @@ public class SetspawnpointCommand implements CommandExecutor {
 
                 if (Bukkit.getWorld(args[0]) != null) {
 
-                    config.set("data.spawnpoint.world", Bukkit.getWorld(args[0]));
+                    config.set("data.spawnpoint.world", Bukkit.getWorld(args[0]).getName());
                     config.set("data.spawnpoint.x", args[1]);
                     config.set("data.spawnpoint.y", args[2]);
                     config.set("data.spawnpoint.z", args[3]);
@@ -59,7 +59,7 @@ public class SetspawnpointCommand implements CommandExecutor {
 
                 if (Bukkit.getWorld(args[0]) != null) {
 
-                    config.set("data.spawnpoint.world", Bukkit.getWorld(args[0]));
+                    config.set("data.spawnpoint.world", Bukkit.getWorld(args[0]).getName());
                     config.set("data.spawnpoint.x", args[1]);
                     config.set("data.spawnpoint.y", args[2]);
                     config.set("data.spawnpoint.z", args[3]);
