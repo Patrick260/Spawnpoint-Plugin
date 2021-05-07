@@ -72,7 +72,7 @@ public class Main extends JavaPlugin {
 
         config.addDefault("permissions.commands.admin.setspawnpoint", "spawnpointplugin.commands.admin.setspawnpoint");
 
-        config.addDefault("data.spawnpoint.world", Bukkit.getWorlds().get(0));
+        config.addDefault("data.spawnpoint.world", Bukkit.getWorlds().get(0).getName());
         config.addDefault("data.spawnpoint.x", 0);
         config.addDefault("data.spawnpoint.y", 63);
         config.addDefault("data.spawnpoint.z", 0);
