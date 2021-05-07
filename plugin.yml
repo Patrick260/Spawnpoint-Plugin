@@ -2,4 +2,4 @@ name: SpawnpointPlugin
 prefix: [SpawpointPlugin]
 version: 1.0
 author: Patrick260
-main: de.patrick260.spawnpointPlugin.main.Main
+main: de.patrick260.spawpointPlugin.main.Main
