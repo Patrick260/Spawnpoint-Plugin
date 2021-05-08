@@ -31,7 +31,7 @@ public class SpawnCommand implements CommandExecutor {
                         Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), config.getFloat("data.spawnpoint.yaw"), config.getFloat("data.spawnpoint.pitch"));
 
                         player.teleport(location);
-                        player.sendMessage(Main.getPlugin().getPrefix() + "§aDu wurdest zum Spawn teleportiert!");
+                        player.sendMessage("§aDu wurdest zum Spawn teleportiert!");
 
                     } else {
 
