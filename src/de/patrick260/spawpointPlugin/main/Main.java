@@ -2,7 +2,7 @@ package de.patrick260.spawpointPlugin.main;
 
 import de.patrick260.spawpointPlugin.commands.SetSpawnpointCommand;
 import de.patrick260.spawpointPlugin.commands.SpawnCommand;
-import de.patrick260.spawpointPlugin.listeners.PlayerDeathListener;
+import de.patrick260.spawpointPlugin.listeners.PlayerRespawnListener;
 import de.patrick260.spawpointPlugin.listeners.PlayerJoinListener;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
@@ -73,8 +73,8 @@ public class Main extends JavaPlugin {
         pluginManager.registerEvents(new PlayerJoinListener(), this);
         console.sendMessage(plugin_prefix + "§aPlayerJoinListener.java wurde erfolgreich geladen und registriert!");
 
-        pluginManager.registerEvents(new PlayerDeathListener(), this);
-        console.sendMessage(plugin_prefix + "§aPlayerDeathListener.java wurde erfolgreich geladen und registriert!");
+        pluginManager.registerEvents(new PlayerRespawnListener(), this);
+        console.sendMessage(plugin_prefix + "§aPlayerRespawnListener.java wurde erfolgreich geladen und registriert!");
 
     }
 
