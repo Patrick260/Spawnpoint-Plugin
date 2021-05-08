@@ -36,7 +36,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                 } else {
 
-                    commandSender.sendMessage("§6Bitte benutze §c/setspawnpoint (world, x, y, z) (yaw, pitch) §6!");
+                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§6Bitte benutze §c/setspawnpoint (world, x, y, z) (yaw, pitch) §6!");
 
                 }
 
@@ -55,7 +55,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                 } else {
 
-                    commandSender.sendMessage("§6Bitte benutze §c/setspawnpoint (world, x, y, z) (yaw, pitch) §6!");
+                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§6Bitte benutze §c/setspawnpoint (world, x, y, z) (yaw, pitch) §6!");
 
                 }
 
@@ -95,7 +95,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                 } else {
 
-                    commandSender.sendMessage("§6Bitte benutze §c/setspawnpoint (world, x, y, z) (yaw, pitch) §6!");
+                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§6Bitte benutze §c/setspawnpoint (world, x, y, z) (yaw, pitch) §6!");
 
                 }
 
@@ -122,13 +122,13 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
             } else {
 
-                commandSender.sendMessage("§6Bitte benutze §c/setspawnpoint <world, x, y, z> <yaw, pitch> §6!");
+                commandSender.sendMessage(Main.getPlugin().getPrefix() + "§6Bitte benutze §c/setspawnpoint <world, x, y, z> <yaw, pitch> §6!");
 
             }
 
         } else {
 
-            commandSender.sendMessage("§cDazu hast du keine Rechte!");
+            commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDazu hast du keine Rechte!");
 
         }
 
