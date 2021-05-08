@@ -15,6 +15,8 @@ public class SetSpawnpointCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
 
+        Main.getPlugin().reloadConfig();
+
         if (commandSender.hasPermission(config.getString("permissions.commands.admin.setSpawnpoint"))) {
 
             if (args.length == 0) {
@@ -31,6 +33,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                     config.set("data.spawnpoint.pitch", player.getLocation().getPitch());
 
                     Main.getPlugin().saveConfig();
+                    Main.getPlugin().reloadConfig();
 
                     player.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf deine Position gesetzt!");
 
@@ -50,6 +53,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                     config.set("data.spawnpoint.z", Integer.parseInt(args[2]));
 
                     Main.getPlugin().saveConfig();
+                    Main.getPlugin().reloadConfig();
 
                     commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
 
@@ -69,6 +73,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                     config.set("data.spawnpoint.z", Integer.parseInt(args[3]));
 
                     Main.getPlugin().saveConfig();
+                    Main.getPlugin().reloadConfig();
 
                     commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
 
@@ -90,6 +95,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                     config.set("data.spawnpoint.pitch", Integer.parseInt(args[4]));
 
                     Main.getPlugin().saveConfig();
+                    Main.getPlugin().reloadConfig();
 
                     commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
 
@@ -111,6 +117,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                     config.set("data.spawnpoint.pitch", Integer.parseInt(args[5]));
 
                     Main.getPlugin().saveConfig();
+                    Main.getPlugin().reloadConfig();
 
                     commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
 
