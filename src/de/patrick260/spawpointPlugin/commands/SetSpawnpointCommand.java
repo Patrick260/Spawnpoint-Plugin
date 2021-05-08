@@ -15,8 +15,6 @@ public class SetSpawnpointCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
 
-        Main.getPlugin().reloadConfig();
-
         if (commandSender.hasPermission(config.getString("permissions.commands.admin.setSpawnpoint"))) {
 
             if (args.length == 0) {

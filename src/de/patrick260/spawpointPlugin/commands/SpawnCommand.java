@@ -18,8 +18,6 @@ public class SpawnCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
 
-        Main.getPlugin().reloadConfig();
-
         if (commandSender instanceof Player) {
 
             Player player = (Player) commandSender;

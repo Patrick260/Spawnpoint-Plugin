@@ -99,8 +99,6 @@ public class Main extends JavaPlugin {
 
         saveConfig();
 
-        Main.getPlugin().reloadConfig();
-
     }
 
 
