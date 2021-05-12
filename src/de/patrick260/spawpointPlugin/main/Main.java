@@ -46,13 +46,6 @@ public class Main extends JavaPlugin {
 
     }
 
-    //Things that happens when the server disable the plugin.
-    public void onDisable() {
-
-        //empty
-
-    }
-
 
     //Register the commands of the plugin.
     private void registerCommands() {

@@ -45,15 +45,24 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                 if (commandSender instanceof Player) {
 
-                    config.set("data.spawnpoint.world", Bukkit.getWorld(((Player) commandSender).getWorld().getName()).getName());
-                    config.set("data.spawnpoint.x", Integer.parseInt(args[0]));
-                    config.set("data.spawnpoint.y", Integer.parseInt(args[1]));
-                    config.set("data.spawnpoint.z", Integer.parseInt(args[2]));
+                    try {
 
-                    Main.getPlugin().saveConfig();
-                    Main.getPlugin().reloadConfig();
+                        config.set("data.spawnpoint.world", Bukkit.getWorld(((Player) commandSender).getWorld().getName()).getName());
+                        config.set("data.spawnpoint.x", Integer.parseInt(args[0]));
+                        config.set("data.spawnpoint.y", Integer.parseInt(args[1]));
+                        config.set("data.spawnpoint.z", Integer.parseInt(args[2]));
 
-                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+                        Main.getPlugin().saveConfig();
+                        Main.getPlugin().reloadConfig();
+
+                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+
+
+                    } catch (NumberFormatException exception) {
+
+                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDer Spawnpunkt wurde nicht gesetzt da die Eingabe ungültig war!");
+
+                    }
 
                 } else {
 
@@ -65,15 +74,23 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                 if (Bukkit.getWorld(args[0]) != null) {
 
-                    config.set("data.spawnpoint.world", Bukkit.getWorld(args[0]).getName());
-                    config.set("data.spawnpoint.x", Integer.parseInt(args[1]));
-                    config.set("data.spawnpoint.y", Integer.parseInt(args[2]));
-                    config.set("data.spawnpoint.z", Integer.parseInt(args[3]));
+                    try {
 
-                    Main.getPlugin().saveConfig();
-                    Main.getPlugin().reloadConfig();
+                        config.set("data.spawnpoint.world", Bukkit.getWorld(args[0]).getName());
+                        config.set("data.spawnpoint.x", Integer.parseInt(args[1]));
+                        config.set("data.spawnpoint.y", Integer.parseInt(args[2]));
+                        config.set("data.spawnpoint.z", Integer.parseInt(args[3]));
 
-                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+                        Main.getPlugin().saveConfig();
+                        Main.getPlugin().reloadConfig();
+
+                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+
+                    } catch (NumberFormatException exception) {
+
+                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDer Spawnpunkt wurde nicht gesetzt da die Eingabe ungültig war!");
+
+                    }
 
                 } else {
 
@@ -85,17 +102,25 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                 if (commandSender instanceof Player) {
 
-                    config.set("data.spawnpoint.world", Bukkit.getWorld(((Player) commandSender).getWorld().getName()).getName());
-                    config.set("data.spawnpoint.x", Integer.parseInt(args[0]));
-                    config.set("data.spawnpoint.y", Integer.parseInt(args[1]));
-                    config.set("data.spawnpoint.z", Integer.parseInt(args[2]));
-                    config.set("data.spawnpoint.yaw", Integer.parseInt(args[3]));
-                    config.set("data.spawnpoint.pitch", Integer.parseInt(args[4]));
+                    try {
 
-                    Main.getPlugin().saveConfig();
-                    Main.getPlugin().reloadConfig();
+                        config.set("data.spawnpoint.world", Bukkit.getWorld(((Player) commandSender).getWorld().getName()).getName());
+                        config.set("data.spawnpoint.x", Integer.parseInt(args[0]));
+                        config.set("data.spawnpoint.y", Integer.parseInt(args[1]));
+                        config.set("data.spawnpoint.z", Integer.parseInt(args[2]));
+                        config.set("data.spawnpoint.yaw", Integer.parseInt(args[3]));
+                        config.set("data.spawnpoint.pitch", Integer.parseInt(args[4]));
 
-                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+                        Main.getPlugin().saveConfig();
+                        Main.getPlugin().reloadConfig();
+
+                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+
+                    } catch (NumberFormatException exception) {
+
+                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDer Spawnpunkt wurde nicht gesetzt da die Eingabe ungültig war!");
+
+                    }
 
                 } else {
 
@@ -107,17 +132,25 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                 if (Bukkit.getWorld(args[0]) != null) {
 
-                    config.set("data.spawnpoint.world", Bukkit.getWorld(args[0]).getName());
-                    config.set("data.spawnpoint.x", Integer.parseInt(args[1]));
-                    config.set("data.spawnpoint.y", Integer.parseInt(args[2]));
-                    config.set("data.spawnpoint.z", Integer.parseInt(args[3]));
-                    config.set("data.spawnpoint.yaw", Integer.parseInt(args[4]));
-                    config.set("data.spawnpoint.pitch", Integer.parseInt(args[5]));
+                    try {
 
-                    Main.getPlugin().saveConfig();
-                    Main.getPlugin().reloadConfig();
+                        config.set("data.spawnpoint.world", Bukkit.getWorld(args[0]).getName());
+                        config.set("data.spawnpoint.x", Integer.parseInt(args[1]));
+                        config.set("data.spawnpoint.y", Integer.parseInt(args[2]));
+                        config.set("data.spawnpoint.z", Integer.parseInt(args[3]));
+                        config.set("data.spawnpoint.yaw", Integer.parseInt(args[4]));
+                        config.set("data.spawnpoint.pitch", Integer.parseInt(args[5]));
 
-                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+                        Main.getPlugin().saveConfig();
+                        Main.getPlugin().reloadConfig();
+
+                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+
+                    } catch (NumberFormatException exception) {
+
+                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDer Spawnpunkt wurde nicht gesetzt da die Eingabe ungültig war!");
+
+                    }
 
                 } else {
 
