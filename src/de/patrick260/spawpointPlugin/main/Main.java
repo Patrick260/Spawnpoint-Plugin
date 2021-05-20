@@ -80,6 +80,8 @@ public class Main extends JavaPlugin {
         config.addDefault("permissions.commands.spawn.teleport", "spawnpointPlugin.commands.spawn.teleport");
 
         config.addDefault("settings.language", "DE");
+        config.addDefault("settings.showPrefixByAdminMessages", true);
+        config.addDefault("settings.showPrefixByPlayerMessages", false);
         config.addDefault("settings.commands.spawn.timer", 3);
 
         config.addDefault("data.spawnpoint.world", Bukkit.getWorlds().get(0).getName());
