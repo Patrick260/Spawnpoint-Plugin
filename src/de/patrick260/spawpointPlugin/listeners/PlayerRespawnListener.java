@@ -1,6 +1,7 @@
 package de.patrick260.spawpointPlugin.listeners;
 
 import de.patrick260.spawpointPlugin.main.Main;
+import de.patrick260.spawpointPlugin.util.Language;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -19,7 +20,7 @@ public class PlayerRespawnListener implements Listener {
 
         event.setRespawnLocation(location);
 
-        event.getPlayer().sendMessage("§cDu bist gestorben und wurdest deswegen zum Spawn teleportiert!");
+        event.getPlayer().sendMessage(Language.getText("messages.listeners.onPlayerRespawn.teleportMessage"));
 
     }
 

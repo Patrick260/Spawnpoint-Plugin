@@ -1,0 +1,4 @@
+messages:
+  listeners:
+    onPlayerRespawn:
+      teleportMessage: §cDu bist gestorben und wurdest deswegen zum Spawn teleportiert!
