@@ -1,7 +1,7 @@
 package de.patrick260.spawpointPlugin.listeners;
 
 import de.patrick260.spawpointPlugin.main.Main;
-import de.patrick260.spawpointPlugin.util.Language;
+import de.patrick260.spawpointPlugin.util.LanguageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -13,6 +13,8 @@ public class PlayerRespawnListener implements Listener {
 
     private FileConfiguration config = Main.getPlugin().getConfig();
 
+    private LanguageManager languageManager = Main.getPlugin().getLanguageManager();
+
     @EventHandler
     public void onPlayerRespawn(PlayerRespawnEvent event) {
 
@@ -20,7 +22,9 @@ public class PlayerRespawnListener implements Listener {
 
         event.setRespawnLocation(location);
 
-        event.getPlayer().sendMessage(Language.getText("messages.listeners.onPlayerRespawn.teleportMessage"));
+        char s = languageManager.getText("messages.listeners.onPlayerRespawn.teleportMessage").charAt(0);
+        Main.getPlugin().getConsole().sendMessage((int)s + "L");
+        event.getPlayer().sendMessage(languageManager.getText("messages.listeners.onPlayerRespawn.teleportMessage"));
 
     }
 

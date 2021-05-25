@@ -4,6 +4,7 @@ import de.patrick260.spawpointPlugin.commands.SetSpawnpointCommand;
 import de.patrick260.spawpointPlugin.commands.SpawnCommand;
 import de.patrick260.spawpointPlugin.listeners.PlayerRespawnListener;
 import de.patrick260.spawpointPlugin.listeners.PlayerJoinListener;
+import de.patrick260.spawpointPlugin.util.LanguageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -12,15 +13,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
-    //Main-singelton
     private static Main plugin;
+
+    private LanguageManager languageManager;
 
     private ConsoleCommandSender console = Bukkit.getConsoleSender();
     private FileConfiguration config = getConfig();
 
     private String plugin_prefix;
 
-    //A text that display when you try to start the plugin as a Java programm.
+
     public static void main(String[] args) {
 
         System.out.println("This is a Minecraft 1.8.8 plugin! Not a Java programm!");
@@ -28,13 +30,15 @@ public class Main extends JavaPlugin {
     }
 
 
-    //Things that happens when the server load the plugin.
     public void onEnable() {
 
         plugin = this;
 
         setupDefaultConfig();
         console.sendMessage("[SpawnpointPlugin] config.yml wurde erfolgreich geladen!");
+
+        languageManager = new LanguageManager(config.getString("settings.language"));
+        console.sendMessage("");
 
         plugin_prefix = getPrefix();
         console.sendMessage(plugin_prefix + "§aDer Plugin Prefix wurde erfolgreich aus der Config geladen!");
@@ -47,7 +51,6 @@ public class Main extends JavaPlugin {
     }
 
 
-    //Register the commands of the plugin.
     private void registerCommands() {
 
         getCommand("setspawnpoint").setExecutor(new SetSpawnpointCommand());
@@ -58,7 +61,6 @@ public class Main extends JavaPlugin {
 
     }
 
-    //Register the listeners of the plugin.
     private void registerListener() {
 
         PluginManager pluginManager = Bukkit.getPluginManager();
@@ -71,7 +73,7 @@ public class Main extends JavaPlugin {
 
     }
 
-    //Setup the default config file
+
     private void setupDefaultConfig() {
 
         config.addDefault("plugin.prefix", "§7[§2SpawnpointPlugin§7] §f");
@@ -95,7 +97,6 @@ public class Main extends JavaPlugin {
 
     }
 
-    //Reloads the default config file
     public FileConfiguration reloadDefaultConfig() {
 
         reloadConfig();
@@ -104,24 +105,24 @@ public class Main extends JavaPlugin {
 
     }
 
-
-    //Getter and Setter
-
-    //A Methode to get the main-singelton.
     public static Main getPlugin() {
 
         return plugin;
 
     }
 
-    //Returns the plugin prefix
+    public LanguageManager getLanguageManager() {
+
+        return languageManager;
+
+    }
+
     public String getPrefix() {
 
         return config.getString("plugin.prefix");
 
     }
 
-    //Returns the ConsoleCommandSender
     public ConsoleCommandSender getConsole() {
 
         return console;
