@@ -19,7 +19,7 @@ public class LanguageManager {
 
     public String getText(String path) {
 
-        return languageFile.getString(path);
+        return languageFile.getString(path).replaceAll((char)197+"","");
 
     }
 
