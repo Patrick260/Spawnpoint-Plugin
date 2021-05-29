@@ -22,8 +22,6 @@ public class PlayerRespawnListener implements Listener {
 
         event.setRespawnLocation(location);
 
-        char s = languageManager.getText("messages.listeners.onPlayerRespawn.teleportMessage").charAt(0);
-        Main.getPlugin().getConsole().sendMessage((int)s + "L");
         event.getPlayer().sendMessage(languageManager.getText("messages.listeners.onPlayerRespawn.teleportMessage"));
 
     }
