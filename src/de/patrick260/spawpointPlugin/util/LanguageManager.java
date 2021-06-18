@@ -14,7 +14,11 @@ public class LanguageManager {
 
         this.language = language;
 
-        languageFile = YamlConfiguration.loadConfiguration(this.getClass().getClassLoader().getResourceAsStream("LANG/LANG_" + language + ".yml"));
+        try {
+
+            languageFile = YamlConfiguration.loadConfiguration(this.getClass().getClassLoader().getResourceAsStream("LANG/LANG_" + language + ".yml"));
+
+        } catch (IllegalArgumentException exception) {}
 
         if (language == null) {
 
