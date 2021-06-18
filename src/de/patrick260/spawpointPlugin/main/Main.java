@@ -35,18 +35,18 @@ public class Main extends JavaPlugin {
         plugin = this;
 
         setupDefaultConfig();
-        console.sendMessage("[SpawnpointPlugin] config.yml wurde erfolgreich geladen!");
+        console.sendMessage("[SpawnpointPlugin] config.yml was loaded successfully!");
 
         languageManager = new LanguageManager(config.getString("settings.language"));
         console.sendMessage("");
 
         plugin_prefix = getPrefix();
-        console.sendMessage(plugin_prefix + "§aDer Plugin Prefix wurde erfolgreich aus der Config geladen!");
+        console.sendMessage(plugin_prefix + "§aThe plugin prefix was successfully loaded from the config!");
 
         registerCommands();
         registerListener();
 
-        console.sendMessage(plugin_prefix + "§aDas Plugin wurde erfolgreich aktiviert!");
+        console.sendMessage(plugin_prefix + "§aThe plugin was activated successfully!");
 
     }
 
@@ -54,10 +54,10 @@ public class Main extends JavaPlugin {
     private void registerCommands() {
 
         getCommand("setspawnpoint").setExecutor(new SetSpawnpointCommand());
-        console.sendMessage(plugin_prefix + "§aSetspawnpointCommand.java wurde erfolgreich geladen und registriert!");
+        console.sendMessage(plugin_prefix + "§aSetspawnpointCommand.java was successfully loaded and registered!");
 
         getCommand("spawn").setExecutor(new SpawnCommand());
-        console.sendMessage(plugin_prefix + "§aSpawnCommand.java wurde erfolgreich geladen und registriert!");
+        console.sendMessage(plugin_prefix + "§aSpawnCommand.java was successfully loaded and registered!");
 
     }
 
@@ -66,10 +66,10 @@ public class Main extends JavaPlugin {
         PluginManager pluginManager = Bukkit.getPluginManager();
 
         pluginManager.registerEvents(new PlayerJoinListener(), this);
-        console.sendMessage(plugin_prefix + "§aPlayerJoinListener.java wurde erfolgreich geladen und registriert!");
+        console.sendMessage(plugin_prefix + "§aPlayerJoinListener.java was successfully loaded and registered!");
 
         pluginManager.registerEvents(new PlayerRespawnListener(), this);
-        console.sendMessage(plugin_prefix + "§aPlayerRespawnListener.java wurde erfolgreich geladen und registriert!");
+        console.sendMessage(plugin_prefix + "§aPlayerRespawnListener.java was successfully loaded and registered!");
 
     }
 
