@@ -38,7 +38,7 @@ public class Main extends JavaPlugin {
         console.sendMessage("[SpawnpointPlugin] config.yml was loaded successfully!");
 
         languageManager = new LanguageManager(config.getString("settings.language"));
-        console.sendMessage("");
+        console.sendMessage(plugin_prefix + "Language" + config.getString("settings.language") + "was loaded successfully!");
 
         plugin_prefix = getPrefix();
         console.sendMessage(plugin_prefix + "§aThe plugin prefix was successfully loaded from the config!");
