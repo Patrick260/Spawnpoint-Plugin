@@ -14,16 +14,22 @@ public class LanguageManager {
 
         this.language = language;
 
+        IllegalArgumentException illegalArgumentException = new IllegalArgumentException();
+
         try {
 
             languageFile = YamlConfiguration.loadConfiguration(this.getClass().getClassLoader().getResourceAsStream("LANG/LANG_" + language + ".yml"));
 
-        } catch (IllegalArgumentException exception) {}
+        } catch (IllegalArgumentException exception) {
+
+            illegalArgumentException = exception;
+
+        }
 
         if (languageFile == null) {
 
             Main.getPlugin().getConsole().sendMessage(Main.getPlugin().getPrefix() + "§cAn error occurred while loading the language file! Perhaps an invalid language was selected.");
-            Main.getPlugin().getPluginLoader().disablePlugin(Main.getPlugin());
+            throw illegalArgumentException;
 
         }
 
