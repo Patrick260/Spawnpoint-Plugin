@@ -1,6 +1,7 @@
 package de.patrick260.spawpointPlugin.commands;
 
 import de.patrick260.spawpointPlugin.main.Main;
+import de.patrick260.spawpointPlugin.util.LanguageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -11,7 +12,9 @@ import org.bukkit.entity.Player;
 
 public class SpawnCommand implements CommandExecutor {
 
-    FileConfiguration config = Main.getPlugin().getConfig();
+    private FileConfiguration config = Main.getPlugin().getConfig();
+
+    private LanguageManager languageManager = Main.getPlugin().getLanguageManager();
 
     private int taskID;
 
@@ -33,7 +36,7 @@ public class SpawnCommand implements CommandExecutor {
                         Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), config.getFloat("data.spawnpoint.yaw"), config.getFloat("data.spawnpoint.pitch"));
 
                         player.teleport(location);
-                        player.sendMessage("§aDu wurdest zum Spawn teleportiert!");
+                        player.sendMessage(languageManager.getText("messages.commands.spawnCommand.succesTeleport"));
 
                     } else {
 
@@ -49,13 +52,13 @@ public class SpawnCommand implements CommandExecutor {
                                     Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), config.getFloat("data.spawnpoint.yaw"), config.getFloat("data.spawnpoint.pitch"));
 
                                     player.teleport(location);
-                                    player.sendMessage("§aDu wurdest zum Spawn teleportiert!");
+                                    player.sendMessage(languageManager.getText("messages.commands.spawnCommand.succesTeleport"));
 
                                     Bukkit.getScheduler().cancelTask(taskID);
 
                                 } else {
 
-                                    player.sendMessage("§aDu wirst in §c" + countdown + " §aSekunden zum Spawn teleportiert!");
+                                    player.sendMessage(languageManager.getText("messages.commands.spawnCommand.teleportCountdown").replace("%countdown", Integer.toString(countdown)));
                                     countdown--;
 
                                 }
@@ -68,19 +71,19 @@ public class SpawnCommand implements CommandExecutor {
 
                 } else {
 
-                    player.sendMessage("§cDazu hast du keine Rechte!");
+                    player.sendMessage(languageManager.getText("messages.commands.general.noPermissions"));
 
                 }
 
             } else {
 
-                player.sendMessage("§6Bitte benutze §c/spawn §6!");
+                player.sendMessage(languageManager.getText("messages.commands.spawnCommand.wrongSyntax"));
 
             }
 
         } else {
 
-            commandSender.sendMessage("§cNur Spieler koennen diesen Command ausfuehren!");
+            commandSender.sendMessage(languageManager.getText("messages.commands.general.onlyPlayerCanExecute"));
 
         }
 
