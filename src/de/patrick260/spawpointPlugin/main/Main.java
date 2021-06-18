@@ -81,7 +81,7 @@ public class Main extends JavaPlugin {
         config.addDefault("permissions.commands.admin.setSpawnpoint", "spawnpointPlugin.commands.admin.setSpawnpoint");
         config.addDefault("permissions.commands.spawn.teleport", "spawnpointPlugin.commands.spawn.teleport");
 
-        config.addDefault("settings.language", "DE");
+        config.addDefault("settings.language", "EN");
         config.addDefault("settings.commands.spawn.timer", 3);
 
         config.addDefault("data.spawnpoint.world", Bukkit.getWorlds().get(0).getName());
