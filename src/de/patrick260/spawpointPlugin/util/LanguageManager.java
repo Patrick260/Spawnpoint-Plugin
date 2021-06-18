@@ -20,7 +20,7 @@ public class LanguageManager {
 
         } catch (IllegalArgumentException exception) {}
 
-        if (language == null) {
+        if (languageFile == null) {
 
             Main.getPlugin().getConsole().sendMessage(Main.getPlugin().getPrefix() + "§cAn error occurred while loading the language file! Perhaps an invalid language was selected.");
             Main.getPlugin().getPluginLoader().disablePlugin(Main.getPlugin());
