@@ -2,3 +2,11 @@ messages:
   listeners:
     onPlayerRespawn:
       teleportMessage: §cDu bist gestorben und wurdest deswegen zum Spawn teleportiert!
+  commands:
+    general:
+      noPermissions: §cDazu hast du keine Rechte!
+      onlyPlayerCanExcute: §cNur Spieler koennen diesen Command ausfuehren!
+    spawnCommand:
+      succesTeleport: §aDu wurdest zum Spawn teleportiert!
+      teleportCountdown: §aDu wirst in §c%countdown% §aSekunden zum Spawn teleportiert!
+      wrongSyntax: §6Bitte benutze §c/spawn §6!
