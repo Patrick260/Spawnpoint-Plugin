@@ -1,0 +1,12 @@
+messages:
+  listeners:
+    onPlayerRespawn:
+      teleportMessage: §cYou was teleported to the spawn beacause you died!
+  commands:
+    general:
+      noPermissions: §cYou don't have permissions to do that!
+      onlyPlayerCanExcute: §cOnly players can execute this command!
+    spawnCommand:
+      succesTeleport: §aYou was teleported to the spawn!
+      teleportCountdown: §aYou will teleport to the spawn in §c%countdown% §aseconds!
+      wrongSyntax: §6Wrong Syntax! Please use §c/spawn §6!
