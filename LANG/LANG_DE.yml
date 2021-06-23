@@ -9,4 +9,4 @@ messages:
     spawnCommand:
       succesTeleport: §aDu wurdest zum Spawn teleportiert!
       teleportCountdown: §aDu wirst in §c%countdown% §aSekunden zum Spawn teleportiert!
-      wrongSyntax: §6Bitte benutze §c/spawn §6!
+      wrongSyntax: §6Falscher Syntax! Bitte benutze §c/spawn §6!
