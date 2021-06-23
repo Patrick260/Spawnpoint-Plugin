@@ -59,7 +59,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         Main.getPlugin().saveConfig();
                         Main.getPlugin().reloadConfig();
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCordinates"));
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
 
 
                     } catch (NumberFormatException exception) {
@@ -89,7 +89,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         Main.getPlugin().saveConfig();
                         Main.getPlugin().reloadConfig();
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCordinates"));
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
 
                     } catch (NumberFormatException exception) {
 
@@ -120,7 +120,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         Main.getPlugin().saveConfig();
                         Main.getPlugin().reloadConfig();
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCordinates"));
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
 
                     } catch (NumberFormatException exception) {
 
@@ -151,7 +151,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         Main.getPlugin().saveConfig();
                         Main.getPlugin().reloadConfig();
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCordinates"));
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
 
                     } catch (NumberFormatException exception) {
 
