@@ -1,6 +1,7 @@
 package de.patrick260.spawpointPlugin.commands;
 
 import de.patrick260.spawpointPlugin.main.Main;
+import de.patrick260.spawpointPlugin.util.LanguageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,11 +13,14 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
     private FileConfiguration config = Main.getPlugin().getConfig();
 
+    private LanguageManager languageManager = Main.getPlugin().getLanguageManager();
+
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
 
         if (commandSender.hasPermission(config.getString("permissions.commands.admin.setSpawnpoint"))) {
 
+            // PLAYER: /setspawnpoint
             if (args.length == 0) {
 
                 if (commandSender instanceof Player) {
@@ -33,14 +37,14 @@ public class SetSpawnpointCommand implements CommandExecutor {
                     Main.getPlugin().saveConfig();
                     Main.getPlugin().reloadConfig();
 
-                    player.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf deine Position gesetzt!");
-
+                    player.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToPlayerPosition"));
                 } else {
 
-                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§6Bitte benutze §c/setspawnpoint (world, x, y, z) (yaw, pitch) §6!");
+                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs"));
 
                 }
 
+            // PLAYER: /setspawnpoint <x, y, z>
             } else if (args.length == 3) {
 
                 if (commandSender instanceof Player) {
@@ -55,21 +59,22 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         Main.getPlugin().saveConfig();
                         Main.getPlugin().reloadConfig();
 
-                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCordinates"));
 
 
                     } catch (NumberFormatException exception) {
 
-                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDer Spawnpunkt wurde nicht gesetzt da die Eingabe ungültig war!");
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointInvalidInput"));
 
                     }
 
                 } else {
 
-                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§6Bitte benutze §c/setspawnpoint (world, x, y, z) (yaw, pitch) §6!");
+                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs"));
 
                 }
 
+            // PLAYER AND CONSOLE: /setspawnpoint <world, x, y, z>
             } else if (args.length == 4) {
 
                 if (Bukkit.getWorld(args[0]) != null) {
@@ -84,20 +89,21 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         Main.getPlugin().saveConfig();
                         Main.getPlugin().reloadConfig();
 
-                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCordinates"));
 
                     } catch (NumberFormatException exception) {
 
-                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDer Spawnpunkt wurde nicht gesetzt da die Eingabe ungültig war!");
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs"));
 
                     }
 
                 } else {
 
-                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDer Spawnpoint wurde nicht gesetzt da die angegebene Welt nicht existiert!");
+                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointUnexistingWorld"));
 
                 }
 
+            // PLAYER: /setspawnpoint <x, y, z, yaw, pitch>
             } else if (args.length == 5) {
 
                 if (commandSender instanceof Player) {
@@ -114,20 +120,21 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         Main.getPlugin().saveConfig();
                         Main.getPlugin().reloadConfig();
 
-                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCordinates"));
 
                     } catch (NumberFormatException exception) {
 
-                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDer Spawnpunkt wurde nicht gesetzt da die Eingabe ungültig war!");
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointInvalidInput"));
 
                     }
 
                 } else {
 
-                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§6Bitte benutze §c/setspawnpoint (world, x, y, z) (yaw, pitch) §6!");
+                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs"));
 
                 }
 
+            // PLAYER AND CONSOLE: /setspawnpoint <world, x, y, z, yaw, pitch>
             } else if (args.length == 6) {
 
                 if (Bukkit.getWorld(args[0]) != null) {
@@ -144,29 +151,29 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         Main.getPlugin().saveConfig();
                         Main.getPlugin().reloadConfig();
 
-                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!");
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCordinates"));
 
                     } catch (NumberFormatException exception) {
 
-                        commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDer Spawnpunkt wurde nicht gesetzt da die Eingabe ungültig war!");
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointInvalidInput"));
 
                     }
 
                 } else {
 
-                    commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDer Spawnpoint wurde nicht gesetzt da die angegebene Welt nicht existiert!");
+                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointUnexistingWorld"));
 
                 }
 
             } else {
 
-                commandSender.sendMessage(Main.getPlugin().getPrefix() + "§6Bitte benutze §c/setspawnpoint <world, x, y, z> <yaw, pitch> §6!");
+                commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs"));
 
             }
 
         } else {
 
-            commandSender.sendMessage(Main.getPlugin().getPrefix() + "§cDazu hast du keine Rechte!");
+            commandSender.sendMessage(languageManager.getText("messages.commands.general.noPermissions"));
 
         }
 

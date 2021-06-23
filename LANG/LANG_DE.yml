@@ -10,3 +10,9 @@ messages:
       succesTeleport: §aDu wurdest zum Spawn teleportiert!
       teleportCountdown: §aDu wirst in §c%countdown% §aSekunden zum Spawn teleportiert!
       wrongSyntax: §6Falscher Syntax! Bitte benutze §c/spawn §6!
+    setSpawnpointCommand:
+      succesSetSpawnpointToPlayerPosition: §aDer Spawnpunkt wurde erfolgreich auf deine Position gesetzt!
+      succesSetSpawnpointToCordinates: §aDer Spawnpunkt wurde erfolgreich auf die angegebenen Kordinaten gesetzt!
+      consoleSetSpawnpointWithWrongArgs: §6Falscher Syntax! Bitte benutze §c/setspawnpoint <world, x, y, z> (yaw, pitch) §6!
+      failToSetSpawnpointInvalidInput: §cDer Spawnpunkt wurde nicht gesetzt da die Eingabe ungültig war!
+      failToSetSpawnpointUnexistingWorld: §cDer Spawnpoint wurde nicht gesetzt da die angegebene Welt nicht existiert!
