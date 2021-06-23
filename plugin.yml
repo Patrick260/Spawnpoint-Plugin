@@ -10,3 +10,6 @@ commands:
   spawn:
     description: Teleport you to the spawn.
     usage: /spawn
+  spawnpoint-info:
+    description: Display infos about the plugin.
+    usage: /spawnpoint-info
