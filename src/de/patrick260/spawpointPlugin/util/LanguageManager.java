@@ -6,7 +6,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 public class LanguageManager {
 
-    private String language;
+    private final String language;
 
     private FileConfiguration languageFile;
 
