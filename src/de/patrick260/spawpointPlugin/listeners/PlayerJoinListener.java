@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class PlayerJoinListener implements Listener {
 
-    private FileConfiguration config = Main.getPlugin().getConfig();
+    private final FileConfiguration config = Main.getPlugin().getConfig();
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {

@@ -11,9 +11,9 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 
 public class PlayerRespawnListener implements Listener {
 
-    private FileConfiguration config = Main.getPlugin().getConfig();
+    private final FileConfiguration config = Main.getPlugin().getConfig();
 
-    private LanguageManager languageManager = Main.getPlugin().getLanguageManager();
+    private final LanguageManager languageManager = Main.getPlugin().getLanguageManager();
 
     @EventHandler
     public void onPlayerRespawn(PlayerRespawnEvent event) {

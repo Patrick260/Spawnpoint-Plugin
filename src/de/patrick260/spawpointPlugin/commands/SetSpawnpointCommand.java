@@ -11,9 +11,9 @@ import org.bukkit.entity.Player;
 
 public class SetSpawnpointCommand implements CommandExecutor {
 
-    private FileConfiguration config = Main.getPlugin().getConfig();
+    private final FileConfiguration config = Main.getPlugin().getConfig();
 
-    private LanguageManager languageManager = Main.getPlugin().getLanguageManager();
+    private final LanguageManager languageManager = Main.getPlugin().getLanguageManager();
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {

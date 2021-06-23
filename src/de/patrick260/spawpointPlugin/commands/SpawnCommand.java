@@ -14,7 +14,7 @@ public class SpawnCommand implements CommandExecutor {
 
     private FileConfiguration config = Main.getPlugin().getConfig();
 
-    private LanguageManager languageManager = Main.getPlugin().getLanguageManager();
+    private final LanguageManager languageManager = Main.getPlugin().getLanguageManager();
 
     private int taskID;
 

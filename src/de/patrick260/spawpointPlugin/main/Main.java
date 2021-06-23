@@ -18,8 +18,8 @@ public class Main extends JavaPlugin {
 
     private LanguageManager languageManager;
 
-    private ConsoleCommandSender console = Bukkit.getConsoleSender();
-    private FileConfiguration config = getConfig();
+    private final ConsoleCommandSender console = Bukkit.getConsoleSender();
+    private final FileConfiguration config = getConfig();
 
     private String plugin_prefix;
 
