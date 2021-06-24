@@ -58,7 +58,7 @@ public class SpawnCommand implements CommandExecutor {
 
                                 } else {
 
-                                    player.sendMessage(languageManager.getText("messages.commands.spawnCommand.teleportCountdown").replace("%countdown", Integer.toString(countdown)));
+                                    player.sendMessage(languageManager.getText("messages.commands.spawnCommand.teleportCountdown").replace("%countdown%", Integer.toString(countdown)));
                                     countdown--;
 
                                 }
