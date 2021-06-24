@@ -60,7 +60,7 @@ public class Main extends JavaPlugin {
         getCommand("spawn").setExecutor(new SpawnCommand());
         console.sendMessage(plugin_prefix + "§aSpawnCommand.java was successfully loaded and registered!");
 
-        getCommand("spawn").setExecutor(new SpawnpointInfoCommand());
+        getCommand("spawnpoint-info").setExecutor(new SpawnpointInfoCommand());
         console.sendMessage(plugin_prefix + "§aSpawnpointInfoCommand.java was successfully loaded and registered!");
 
     }
