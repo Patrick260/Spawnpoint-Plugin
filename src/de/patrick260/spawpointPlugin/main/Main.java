@@ -42,7 +42,7 @@ public class Main extends JavaPlugin {
         console.sendMessage(plugin_prefix + "§aThe plugin prefix was successfully loaded from the config!");
 
         languageManager = new LanguageManager(config.getString("settings.language"));
-        console.sendMessage(plugin_prefix + "Language file LANG_" + config.getString("settings.language") + ".yml was loaded successfully!");
+        console.sendMessage(plugin_prefix + "§aLanguage file LANG_" + config.getString("settings.language") + ".yml was loaded successfully!");
 
         registerCommands();
         registerListener();
