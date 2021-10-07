@@ -35,7 +35,6 @@ public class SetSpawnpointCommand implements CommandExecutor {
                     config.set("data.spawnpoint.pitch", player.getLocation().getPitch());
 
                     Main.getPlugin().saveConfig();
-                    Main.getPlugin().reloadConfig();
 
                     player.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToPlayerPosition"));
                 } else {
@@ -57,7 +56,6 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         config.set("data.spawnpoint.z", Integer.parseInt(args[2]));
 
                         Main.getPlugin().saveConfig();
-                        Main.getPlugin().reloadConfig();
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
 
@@ -87,7 +85,6 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         config.set("data.spawnpoint.z", Integer.parseInt(args[3]));
 
                         Main.getPlugin().saveConfig();
-                        Main.getPlugin().reloadConfig();
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
 
@@ -118,7 +115,6 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         config.set("data.spawnpoint.pitch", Integer.parseInt(args[4]));
 
                         Main.getPlugin().saveConfig();
-                        Main.getPlugin().reloadConfig();
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
 
@@ -149,7 +145,6 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         config.set("data.spawnpoint.pitch", Integer.parseInt(args[5]));
 
                         Main.getPlugin().saveConfig();
-                        Main.getPlugin().reloadConfig();
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
 
