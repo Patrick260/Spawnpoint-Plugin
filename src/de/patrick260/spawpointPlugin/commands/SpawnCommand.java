@@ -35,7 +35,7 @@ public class SpawnCommand implements CommandExecutor {
 
                     if (config.getInt("settings.commands.spawn.timer") == 0) {
 
-                        Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), config.getFloat("data.spawnpoint.yaw"), config.getFloat("data.spawnpoint.pitch"));
+                        Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), (float) config.getDouble("data.spawnpoint.yaw"), (float) config.getDouble("data.spawnpoint.pitch"));
 
                         player.teleport(location);
                         player.sendMessage(languageManager.getText("messages.commands.spawnCommand.succesTeleport"));
@@ -55,7 +55,7 @@ public class SpawnCommand implements CommandExecutor {
 
                                     if (countdown <= 0) {
 
-                                        Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), config.getFloat("data.spawnpoint.yaw"), config.getFloat("data.spawnpoint.pitch"));
+                                        Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), (float) config.getDouble("data.spawnpoint.yaw"), (float) config.getDouble("data.spawnpoint.pitch"));
 
                                         player.teleport(location);
                                         player.sendMessage(languageManager.getText("messages.commands.spawnCommand.succesTeleport"));
