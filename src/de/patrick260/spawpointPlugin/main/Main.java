@@ -101,14 +101,6 @@ public class Main extends JavaPlugin {
 
     }
 
-    public FileConfiguration reloadDefaultConfig() {
-
-        reloadConfig();
-
-        return Main.getPlugin().getConfig();
-
-    }
-
     public static Main getPlugin() {
 
         return plugin;
