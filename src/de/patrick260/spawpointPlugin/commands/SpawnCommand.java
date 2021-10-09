@@ -10,6 +10,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+
 public class SpawnCommand implements CommandExecutor {
 
     private FileConfiguration config = Main.getPlugin().getConfig();
@@ -17,6 +19,8 @@ public class SpawnCommand implements CommandExecutor {
     private final LanguageManager languageManager = Main.getPlugin().getLanguageManager();
 
     private int taskID;
+
+    private ArrayList<Player> playersInTeleportQueue = new ArrayList<Player>();
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
@@ -40,32 +44,40 @@ public class SpawnCommand implements CommandExecutor {
 
                     } else {
 
-                        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+                        if (!playersInTeleportQueue.contains(player)) {
 
-                            int countdown = config.getInt("settings.commands.spawn.timer");
+                            playersInTeleportQueue.add(player);
 
-                            @Override
-                            public void run() {
+                            taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
 
-                                if (countdown <= 0) {
+                                int countdown = config.getInt("settings.commands.spawn.timer");
 
-                                    Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), config.getFloat("data.spawnpoint.yaw"), config.getFloat("data.spawnpoint.pitch"));
+                                @Override
+                                public void run() {
 
-                                    player.teleport(location);
-                                    player.sendMessage(languageManager.getText("messages.commands.spawnCommand.succesTeleport"));
+                                    if (countdown <= 0) {
 
-                                    Bukkit.getScheduler().cancelTask(taskID);
+                                        Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), config.getFloat("data.spawnpoint.yaw"), config.getFloat("data.spawnpoint.pitch"));
 
-                                } else {
+                                        player.teleport(location);
+                                        player.sendMessage(languageManager.getText("messages.commands.spawnCommand.succesTeleport"));
 
-                                    player.sendMessage(languageManager.getText("messages.commands.spawnCommand.teleportCountdown").replace("%countdown%", Integer.toString(countdown)));
-                                    countdown--;
+                                        playersInTeleportQueue.remove(player);
+
+                                        Bukkit.getScheduler().cancelTask(taskID);
+
+                                    } else {
+
+                                        player.sendMessage(languageManager.getText("messages.commands.spawnCommand.teleportCountdown").replace("%countdown%", Integer.toString(countdown)));
+                                        countdown--;
+
+                                    }
 
                                 }
 
-                            }
+                            }, 0, 20);
 
-                        }, 0, 20);
+                        }
 
                     }
 
