@@ -5,7 +5,7 @@ messages:
   commands:
     general:
       noPermissions: §cYou don't have permissions to do that!
-      onlyPlayerCanExcute: §cOnly players can execute this command!
+      onlyPlayerCanExecute: §cOnly players can execute this command!
     spawnCommand:
       succesTeleport: §aYou were teleported to the spawn!
       teleportCountdown: §aYou will be teleported to the spawn in §c%countdown% §aseconds!
