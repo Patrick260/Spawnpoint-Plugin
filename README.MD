@@ -11,6 +11,6 @@ Download the latest release and put the jar file into your plugin folder, than r
 ## Planned features
 - Compatibility with higher versions than 1.11.x
 
-## Dev infos
+## Dev informations
 JDK: adobe-openj9-8 version 1.8.0_292\
 API: paper-1.8.8-443
