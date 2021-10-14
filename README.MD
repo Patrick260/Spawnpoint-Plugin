@@ -10,7 +10,8 @@ Commands:
     /spawn - Teleports you to the spawn.
     /spawnpointinfo - Display infos about the plugin.
 
-Permissions: Attention, this are the default permissions. You can change them in the config.yml to whatever you want.
+Permissions:
+Attention, this are the default permissions. You can change them in the config.yml to whatever you want.
 
     spawnpointPlugin.commands.admin.setSpawnpoint - The permissions is needed to set the spawnpoint.
     spawnpointPlugin.commands.spawn.teleport - The permission is needed to teleport you to the spawnpoint.
