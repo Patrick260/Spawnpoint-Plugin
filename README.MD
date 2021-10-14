@@ -16,7 +16,6 @@ Attention, this are the default permissions. You can change them in the config.y
     spawnpointPlugin.commands.admin.setSpawnpoint - The permissions is needed to set the spawnpoint.
     spawnpointPlugin.commands.spawn.teleport - The permission is needed to teleport you to the spawnpoint.
 
-
 ## Features
 - Set an spawnpoint where player spawn when they join, die or do /spawn
 - Multiple language supported
