@@ -24,5 +24,5 @@ Attention, this are the default permissions. You can change them in the config.y
 - Compatibility with higher versions than 1.11.x
 
 ## Dev informations
-JDK: adobe-openj9-8 version 1.8.0_292\
+JDK: adobe-openj9-1.8.0_302\
 API: paper-1.8.8-443
