@@ -11,6 +11,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.UUID;
 
 public class SpawnCommand implements CommandExecutor {
 
@@ -18,9 +20,9 @@ public class SpawnCommand implements CommandExecutor {
 
     private final LanguageManager languageManager = Main.getPlugin().getLanguageManager();
 
-    private int taskID;
+    private HashMap<UUID, Integer> taskIDs = new HashMap<>();
 
-    private ArrayList<Player> playersInTeleportQueue = new ArrayList<Player>();
+    private ArrayList<Player> playersInTeleportQueue = new ArrayList<>();
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
@@ -46,7 +48,7 @@ public class SpawnCommand implements CommandExecutor {
 
                             playersInTeleportQueue.add(player);
 
-                            taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+                            taskIDs.put(player.getUniqueId(), Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
 
                                 int countdown = config.getInt("settings.commands.spawn.timer");
 
@@ -62,7 +64,7 @@ public class SpawnCommand implements CommandExecutor {
 
                                         playersInTeleportQueue.remove(player);
 
-                                        Bukkit.getScheduler().cancelTask(taskID);
+                                        Bukkit.getScheduler().cancelTask(taskIDs.get(player.getUniqueId()));
 
                                     } else {
 
@@ -73,7 +75,7 @@ public class SpawnCommand implements CommandExecutor {
 
                                 }
 
-                            }, 0, 20);
+                            }, 0, 20));
 
                         }
 
