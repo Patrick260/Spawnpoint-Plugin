@@ -4,6 +4,8 @@ import de.patrick260.spawpointPlugin.main.Main;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import java.io.InputStreamReader;
+
 public class LanguageManager {
 
     private final String language;
@@ -18,7 +20,7 @@ public class LanguageManager {
 
         try {
 
-            languageFile = YamlConfiguration.loadConfiguration(this.getClass().getClassLoader().getResourceAsStream("LANG/LANG_" + language + ".yml"));
+            languageFile = YamlConfiguration.loadConfiguration(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("LANG/LANG_" + language + ".yml")));
 
         } catch (IllegalArgumentException exception) {
 
