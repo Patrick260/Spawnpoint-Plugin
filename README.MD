@@ -1,5 +1,5 @@
 ## What's this?
-A simple Spawnpoint Plugin for spigot! Works with the Minecraft versions 1.8.x to 1.11.x. Compatibility with higher versions is planned.
+A simple Spawnpoint Plugin for spigot! Works with the Minecraft versions 1.8.x to 1.17.x.
 
 ## How to use it
 Download the latest release and put the jar file into your plugin folder, than restart the server.
@@ -19,9 +19,6 @@ Attention, this are the default permissions. You can change them in the config.y
 ## Features
 - Set an spawnpoint where player spawn when they join, die or do /spawn
 - Multiple language supported
-
-## Planned features
-- Compatibility with higher versions than 1.11.x
 
 ## Dev informations
 JDK: adobe-openj9-1.8.0_302\
