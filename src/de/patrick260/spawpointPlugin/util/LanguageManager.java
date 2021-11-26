@@ -4,7 +4,7 @@ import de.patrick260.spawpointPlugin.main.Main;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import java.io.InputStreamReader;
+import java.io.File;
 
 public class LanguageManager {
 
@@ -14,26 +14,21 @@ public class LanguageManager {
 
     public LanguageManager(String language) {
 
+        Main.getPlugin().saveResource("LANG/LANG_DE.yml", false);
+        Main.getPlugin().saveResource("LANG/LANG_EN.yml", false);
+
         this.language = language;
 
-        IllegalArgumentException illegalArgumentException = new IllegalArgumentException();
-
-        try {
-
-            languageFile = YamlConfiguration.loadConfiguration(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("LANG/LANG_" + language + ".yml")));
-
-        } catch (IllegalArgumentException exception) {
-
-            illegalArgumentException = exception;
-
-        }
-
-        if (languageFile == null) {
+        if (!new File(Main.getPlugin().getDataFolder()+ "/LANG/LANG_" + language + ".yml").exists()) {
 
             Main.getPlugin().getConsole().sendMessage(Main.getPlugin().getPrefix() + "§cAn error occurred while loading the language file! Perhaps an invalid language was selected.");
-            throw illegalArgumentException;
+
+        } else {
+
+            languageFile = YamlConfiguration.loadConfiguration(new File(Main.getPlugin().getDataFolder() + "/LANG/LANG_" + language + ".yml"));
 
         }
+
 
     }
 
