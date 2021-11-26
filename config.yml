@@ -1,0 +1,21 @@
+plugin:
+  prefix: "\xa77[\xa72SpawnpointPlugin\xa77] \xa7f"
+permissions:
+  commands:
+    admin:
+      setSpawnpoint: spawnpointPlugin.commands.admin.setSpawnpoint
+    spawn:
+      teleport: spawnpointPlugin.commands.spawn.teleport
+settings:
+  language: EN
+  commands:
+    spawn:
+      timer: 3
+data:
+  spawnpoint:
+    world: world
+    x: 0
+    y: 64
+    z: 0
+    yaw: 0
+    pitch: 0

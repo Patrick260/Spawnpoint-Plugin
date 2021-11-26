@@ -35,7 +35,7 @@ public class Main extends JavaPlugin {
 
         plugin = this;
 
-        setupDefaultConfig();
+        saveDefaultConfig();
         console.sendMessage("[SpawnpointPlugin] config.yml was loaded successfully!");
 
         plugin_prefix = getPrefix();
@@ -77,29 +77,6 @@ public class Main extends JavaPlugin {
 
     }
 
-
-    private void setupDefaultConfig() {
-
-        config.addDefault("plugin.prefix", "§7[§2SpawnpointPlugin§7] §f");
-
-        config.addDefault("permissions.commands.admin.setSpawnpoint", "spawnpointPlugin.commands.admin.setSpawnpoint");
-        config.addDefault("permissions.commands.spawn.teleport", "spawnpointPlugin.commands.spawn.teleport");
-
-        config.addDefault("settings.language", "EN");
-        config.addDefault("settings.commands.spawn.timer", 3);
-
-        config.addDefault("data.spawnpoint.world", Bukkit.getWorlds().get(0).getName());
-        config.addDefault("data.spawnpoint.x", 0);
-        config.addDefault("data.spawnpoint.y", 64);
-        config.addDefault("data.spawnpoint.z", 0);
-        config.addDefault("data.spawnpoint.yaw", 0);
-        config.addDefault("data.spawnpoint.pitch", 0);
-
-        config.options().copyDefaults(true);
-
-        saveConfig();
-
-    }
 
     public static Main getPlugin() {
 
