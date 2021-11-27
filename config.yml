@@ -1,5 +1,5 @@
 plugin:
-  prefix: "\xa77[\xa72SpawnpointPlugin\xa77] \xa7f"
+  prefix: "§7[§2SpawnpointPlugin§7] §f"
 permissions:
   commands:
     admin:
