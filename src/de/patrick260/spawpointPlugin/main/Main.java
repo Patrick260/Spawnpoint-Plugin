@@ -38,7 +38,7 @@ public class Main extends JavaPlugin {
         saveDefaultConfig();
         console.sendMessage("[SpawnpointPlugin] config.yml was loaded successfully!");
 
-        plugin_prefix = getPrefix().replaceAll("&", "§");
+        plugin_prefix = getPrefix();
         console.sendMessage(plugin_prefix + "§aThe plugin prefix was successfully loaded from the config!");
 
         languageManager = new LanguageManager(config.getString("settings.language"));
@@ -92,7 +92,7 @@ public class Main extends JavaPlugin {
 
     public String getPrefix() {
 
-        return config.getString("plugin.prefix");
+        return config.getString("plugin.prefix").replaceAll("&", "§");
 
     }
 
