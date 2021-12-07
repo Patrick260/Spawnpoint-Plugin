@@ -12,6 +12,7 @@ settings:
     spawn:
       timer: 3
   teleportOnJoin: true
+  teleportOnDeath: true
 data:
   spawnpoint:
     world: world
