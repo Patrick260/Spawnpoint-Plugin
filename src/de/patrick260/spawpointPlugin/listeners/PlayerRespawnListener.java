@@ -18,11 +18,15 @@ public class PlayerRespawnListener implements Listener {
     @EventHandler
     public void onPlayerRespawn(PlayerRespawnEvent event) {
 
-        Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), (float) config.getDouble("data.spawnpoint.yaw"), (float) config.getDouble("data.spawnpoint.pitch"));
+        if (config.getBoolean("settings.teleportOnDeath")) {
 
-        event.setRespawnLocation(location);
+            Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), (float) config.getDouble("data.spawnpoint.yaw"), (float) config.getDouble("data.spawnpoint.pitch"));
 
-        event.getPlayer().sendMessage(languageManager.getText("messages.listeners.onPlayerRespawn.teleportMessage"));
+            event.setRespawnLocation(location);
+
+            event.getPlayer().sendMessage(languageManager.getText("messages.listeners.onPlayerRespawn.teleportMessage"));
+
+        }
 
     }
 
