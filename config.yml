@@ -11,6 +11,7 @@ settings:
   commands:
     spawn:
       timer: 3
+  teleportOnJoin: true
 data:
   spawnpoint:
     world: world
