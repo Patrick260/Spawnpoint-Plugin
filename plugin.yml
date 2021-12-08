@@ -13,3 +13,6 @@ commands:
   spawnpointinfo:
     description: Display infos about the plugin.
     usage: /spawnpointinfo
+  spawnpointplugin-reloadconfig:
+    description: Reload the config.yml
+    usage: /spawnpointplugin-reloadconfig

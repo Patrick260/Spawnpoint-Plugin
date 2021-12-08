@@ -1,5 +1,6 @@
 package de.patrick260.spawpointPlugin.main;
 
+import de.patrick260.spawpointPlugin.commands.ReloadConfigCommand;
 import de.patrick260.spawpointPlugin.commands.SetSpawnpointCommand;
 import de.patrick260.spawpointPlugin.commands.SpawnCommand;
 import de.patrick260.spawpointPlugin.commands.SpawnpointInfoCommand;
@@ -62,6 +63,9 @@ public class Main extends JavaPlugin {
 
         getCommand("spawnpointinfo").setExecutor(new SpawnpointInfoCommand());
         console.sendMessage(plugin_prefix + "§aSpawnpointInfoCommand.java was successfully loaded and registered!");
+
+        getCommand("spawnpointplugin-reloadconfig").setExecutor(new ReloadConfigCommand());
+        console.sendMessage(plugin_prefix + "§aReloadConfigCommand.java was successfully loaded and registered!");
 
     }
 
