@@ -10,10 +10,12 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class PlayerJoinListener implements Listener {
 
-    private final FileConfiguration config = Main.getPlugin().getConfig();
+    private FileConfiguration config;
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
+
+        config = Main.getPlugin().getConfig();
 
         if (config.getBoolean("settings.teleportOnJoin")) {
 

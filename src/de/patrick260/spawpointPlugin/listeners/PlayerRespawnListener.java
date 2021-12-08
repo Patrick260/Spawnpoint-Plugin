@@ -11,12 +11,14 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 
 public class PlayerRespawnListener implements Listener {
 
-    private final FileConfiguration config = Main.getPlugin().getConfig();
+    private FileConfiguration config;
 
     private final LanguageManager languageManager = Main.getPlugin().getLanguageManager();
 
     @EventHandler
     public void onPlayerRespawn(PlayerRespawnEvent event) {
+
+        config = Main.getPlugin().getConfig();
 
         if (config.getBoolean("settings.teleportOnDeath")) {
 

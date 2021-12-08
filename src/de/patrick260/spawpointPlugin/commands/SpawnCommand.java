@@ -16,7 +16,7 @@ import java.util.UUID;
 
 public class SpawnCommand implements CommandExecutor {
 
-    private FileConfiguration config = Main.getPlugin().getConfig();
+    private FileConfiguration config;
 
     private final LanguageManager languageManager = Main.getPlugin().getLanguageManager();
 
@@ -26,6 +26,8 @@ public class SpawnCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
+
+        config = Main.getPlugin().getConfig();
 
         if (commandSender instanceof Player) {
 
