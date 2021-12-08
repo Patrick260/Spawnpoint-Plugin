@@ -4,6 +4,7 @@ permissions:
   commands:
     admin:
       setSpawnpoint: spawnpointPlugin.commands.admin.setSpawnpoint
+      reloadConfig: spawnpointPlugin.commands.admin.reloadConfig
     spawn:
       teleport: spawnpointPlugin.commands.spawn.teleport
 settings:
