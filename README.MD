@@ -22,4 +22,4 @@ Attention, this are the default permissions. You can change them in the config.y
 
 ## Dev informations
 JDK: adobe-openj9-1.8.0_302\
-API: paper-1.8.8-443
+API: spigot-1.8.8
