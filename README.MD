@@ -8,13 +8,15 @@ Commands:
 
     /setspawnpoint <world, x, y, z> (yaw, pitch) - Set the spawnpoint.
     /spawn - Teleports you to the spawn.
-    /spawnpointinfo - Display infos about the plugin.
+    /spawnpointplugin-info - Display infos about the plugin.
+    /spawnpointplugin-reloadconfig - Reload the config.yml
 
 Permissions:\
 Attention, this are the default permissions. You can change them in the config.yml to whatever you want.
 
     spawnpointPlugin.commands.admin.setSpawnpoint - The permissions is needed to set the spawnpoint.
     spawnpointPlugin.commands.spawn.teleport - The permission is needed to teleport you to the spawnpoint.
+    spawnpointPlugin.commands.admin.reloadConfig - The permission is nedded to reload the config.
 
 ## Features
 - Set an spawnpoint where player spawn when they join, die or do /spawn
