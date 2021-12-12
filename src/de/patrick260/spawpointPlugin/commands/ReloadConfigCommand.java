@@ -11,10 +11,12 @@ public class ReloadConfigCommand implements CommandExecutor {
 
     LanguageManager languageManager = Main.getPlugin().getLanguageManager();
 
-    FileConfiguration config = Main.getPlugin().getConfig();
+    FileConfiguration config;
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
+
+        config = Main.getPlugin().getConfig();
 
         if (commandSender.hasPermission(config.getString("permissions.commands.admin.reloadConfig"))) {
 
