@@ -19,6 +19,7 @@ public class ReloadConfigCommand implements CommandExecutor {
         if (commandSender.hasPermission(config.getString("permissions.commands.admin.reloadConfig"))) {
 
             Main.getPlugin().reloadConfig();
+            languageManager.reloadLanguage();
 
             commandSender.sendMessage(languageManager.getText("messages.commands.reloadConfigCommand.reloadSuccess"));
 
