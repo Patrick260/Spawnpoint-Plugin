@@ -25,6 +25,10 @@ public class ReloadConfigCommand implements CommandExecutor {
 
             commandSender.sendMessage(languageManager.getText("messages.commands.reloadConfigCommand.reloadSuccess"));
 
+        } else {
+
+            commandSender.sendMessage(languageManager.getText("messages.commands.general.noPermissions"));
+
         }
 
         return true;
