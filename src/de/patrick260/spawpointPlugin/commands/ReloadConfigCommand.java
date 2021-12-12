@@ -20,7 +20,7 @@ public class ReloadConfigCommand implements CommandExecutor {
 
             Main.getPlugin().reloadConfig();
 
-            Main.getPlugin().getConsole().sendMessage(languageManager.getText("messages.commands.reloadConfigCommand.reloadSuccess"));
+            commandSender.sendMessage(languageManager.getText("messages.commands.reloadConfigCommand.reloadSuccess"));
 
         }
 
