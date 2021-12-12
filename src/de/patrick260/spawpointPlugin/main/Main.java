@@ -37,6 +37,7 @@ public class Main extends JavaPlugin {
         plugin = this;
 
         saveDefaultConfig();
+        reloadConfig();
         console.sendMessage("[SpawnpointPlugin] config.yml was loaded successfully!");
 
         plugin_prefix = getPrefix();
