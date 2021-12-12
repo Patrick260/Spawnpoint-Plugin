@@ -1,5 +1,5 @@
 plugin:
-  prefix: "§7[§2SpawnpointPlugin§7] §f"
+  prefix: §7[§2SpawnpointPlugin§7] §f
 permissions:
   commands:
     admin:
