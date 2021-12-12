@@ -16,3 +16,5 @@ messages:
       consoleSetSpawnpointWithWrongArgs: §6Falsche Syntax! Bitte benutze §c/setspawnpoint <world, x, y, z> (yaw, pitch) §6!
       failToSetSpawnpointInvalidInput: §cDer Spawnpunkt wurde nicht gesetzt, da die Eingabe ungültig war!
       failToSetSpawnpointUnexistingWorld: §cDer Spawnpoint wurde nicht gesetzt, da die angegebene Welt nicht existiert!
+    reloadConfigCommand:
+      reloadSuccess: §aDie Config wurde erfolgreich neugeladen!
