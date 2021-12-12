@@ -12,7 +12,7 @@ commands:
     usage: /spawn
   spawnpointinfo:
     description: Display infos about the plugin.
-    usage: /spawnpointinfo
+    usage: /spawnpointplugin-info
   spawnpointplugin-reloadconfig:
     description: Reload the config.yml
     usage: /spawnpointplugin-reloadconfig
