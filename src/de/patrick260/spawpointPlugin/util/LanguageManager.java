@@ -8,7 +8,7 @@ import java.io.File;
 
 public class LanguageManager {
 
-    private final String language;
+    private String language;
 
     private FileConfiguration languageFile;
 
@@ -19,6 +19,20 @@ public class LanguageManager {
 
         this.language = language;
 
+        loadLangFile();
+
+    }
+
+    public void reloadLanguage() {
+
+        this.language = Main.getPlugin().getConfig().getString("settings.language");
+
+        loadLangFile();
+
+    }
+
+    public void loadLangFile() {
+
         if (!new File(Main.getPlugin().getDataFolder()+ "/LANG/LANG_" + language + ".yml").exists()) {
 
             Main.getPlugin().getConsole().sendMessage(Main.getPlugin().getPrefix() + "§cAn error occurred while loading the language file! Perhaps an invalid language was selected.");
@@ -28,7 +42,6 @@ public class LanguageManager {
             languageFile = YamlConfiguration.loadConfiguration(new File(Main.getPlugin().getDataFolder() + "/LANG/LANG_" + language + ".yml"));
 
         }
-
 
     }
 
