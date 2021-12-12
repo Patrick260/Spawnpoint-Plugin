@@ -20,9 +20,6 @@ public class Main extends JavaPlugin {
     private LanguageManager languageManager;
 
     private final ConsoleCommandSender console = Bukkit.getConsoleSender();
-    private final FileConfiguration config = getConfig();
-
-    private String plugin_prefix;
 
 
     public static void main(String[] args) {
@@ -38,18 +35,15 @@ public class Main extends JavaPlugin {
 
         saveDefaultConfig();
         reloadConfig();
-        console.sendMessage("[SpawnpointPlugin] config.yml was loaded successfully!");
+        console.sendMessage(getPrefix() + "§aconfig.yml was loaded successfully!");
 
-        plugin_prefix = getPrefix();
-        console.sendMessage(plugin_prefix + "§aThe plugin prefix was successfully loaded from the config!");
-
-        languageManager = new LanguageManager(config.getString("settings.language"));
-        console.sendMessage(plugin_prefix + "§aLanguage file LANG_" + config.getString("settings.language") + ".yml was loaded successfully!");
+        languageManager = new LanguageManager(getConfig().getString("settings.language"));
+        console.sendMessage(getPrefix() + "§aLanguage file LANG_" + getConfig().getString("settings.language") + ".yml was loaded successfully!");
 
         registerCommands();
         registerListener();
 
-        console.sendMessage(plugin_prefix + "§aThe plugin was activated successfully!");
+        console.sendMessage(getPrefix() + "§aThe plugin was activated successfully!");
 
     }
 
@@ -57,16 +51,16 @@ public class Main extends JavaPlugin {
     private void registerCommands() {
 
         getCommand("setspawnpoint").setExecutor(new SetSpawnpointCommand());
-        console.sendMessage(plugin_prefix + "§aSetSpawnpointCommand.java was successfully loaded and registered!");
+        console.sendMessage(getPrefix() + "§aSetSpawnpointCommand.java was successfully loaded and registered!");
 
         getCommand("spawn").setExecutor(new SpawnCommand());
-        console.sendMessage(plugin_prefix + "§aSpawnCommand.java was successfully loaded and registered!");
+        console.sendMessage(getPrefix() + "§aSpawnCommand.java was successfully loaded and registered!");
 
         getCommand("spawnpointinfo").setExecutor(new SpawnpointInfoCommand());
-        console.sendMessage(plugin_prefix + "§aSpawnpointInfoCommand.java was successfully loaded and registered!");
+        console.sendMessage(getPrefix() + "§aSpawnpointInfoCommand.java was successfully loaded and registered!");
 
         getCommand("spawnpointplugin-reloadconfig").setExecutor(new ReloadConfigCommand());
-        console.sendMessage(plugin_prefix + "§aReloadConfigCommand.java was successfully loaded and registered!");
+        console.sendMessage(getPrefix() + "§aReloadConfigCommand.java was successfully loaded and registered!");
 
     }
 
@@ -75,10 +69,10 @@ public class Main extends JavaPlugin {
         PluginManager pluginManager = Bukkit.getPluginManager();
 
         pluginManager.registerEvents(new PlayerJoinListener(), this);
-        console.sendMessage(plugin_prefix + "§aPlayerJoinListener.java was successfully loaded and registered!");
+        console.sendMessage(getPrefix() + "§aPlayerJoinListener.java was successfully loaded and registered!");
 
         pluginManager.registerEvents(new PlayerRespawnListener(), this);
-        console.sendMessage(plugin_prefix + "§aPlayerRespawnListener.java was successfully loaded and registered!");
+        console.sendMessage(getPrefix() + "§aPlayerRespawnListener.java was successfully loaded and registered!");
 
     }
 
@@ -97,7 +91,7 @@ public class Main extends JavaPlugin {
 
     public String getPrefix() {
 
-        return config.getString("plugin.prefix").replaceAll("&", "§");
+        return getConfig().getString("plugin.prefix").replaceAll("&", "§");
 
     }
 
