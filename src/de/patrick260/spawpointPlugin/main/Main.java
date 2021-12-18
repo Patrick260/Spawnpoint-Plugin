@@ -6,6 +6,7 @@ import de.patrick260.spawpointPlugin.commands.SpawnCommand;
 import de.patrick260.spawpointPlugin.commands.SpawnpointInfoCommand;
 import de.patrick260.spawpointPlugin.listeners.PlayerRespawnListener;
 import de.patrick260.spawpointPlugin.listeners.PlayerJoinListener;
+import de.patrick260.spawpointPlugin.util.BStats;
 import de.patrick260.spawpointPlugin.util.LanguageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
@@ -17,6 +18,8 @@ public class Main extends JavaPlugin {
     private static Main plugin;
 
     private LanguageManager languageManager;
+
+    private BStats bStats;
 
     private final ConsoleCommandSender console = Bukkit.getConsoleSender();
 
@@ -41,6 +44,8 @@ public class Main extends JavaPlugin {
 
         registerCommands();
         registerListener();
+
+        bStats = new BStats(this, 13639);
 
         console.sendMessage(getPrefix() + "§aThe plugin was activated successfully!");
 
