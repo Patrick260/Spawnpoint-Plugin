@@ -1,5 +1,5 @@
 ## What's this?
-A simple Spawnpoint Plugin for spigot! Works with the Minecraft versions 1.8.x to 1.17.x.
+A simple Spawnpoint Plugin for spigot! Works with the Minecraft versions 1.8.x to 1.18.x.
 
 ## How to use it
 Download the latest release and put the jar file into your plugin folder, than restart the server.
