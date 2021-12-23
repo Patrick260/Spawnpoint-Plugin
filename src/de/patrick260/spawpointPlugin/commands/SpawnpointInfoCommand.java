@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 public class SpawnpointInfoCommand implements CommandExecutor {
 
     @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+    public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
 
         commandSender.sendMessage(Main.getPlugin().getPrefix() + " §aPlugin coded by Patrick260");
         commandSender.sendMessage(Main.getPlugin().getPrefix() + " §aPlugin source code: https://github.com/Patrick260/SpawnpointPlugin");
