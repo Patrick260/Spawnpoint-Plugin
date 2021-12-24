@@ -1,21 +1,54 @@
-plugin:
+# This is the config file for Spawnpoint-Plugin
+# You can find the source code of the plugin on github (https://github.com/Patrick260/Spawnpoint-Plugin)
+
+# In this section are the general plugin settings
+settings:
+
+  # Here you can set the plugin prefix
   prefix: §7[§2SpawnpointPlugin§7] §f
+
+  # The config option for the plugin language
+  # Supported languages: EN (English), DE (Deutsch)
+  language: EN
+
+  # The config options for commands
+  commands:
+
+    # The config options for /spawn
+    spawn:
+
+      # Here you can set the time how long the teleport delay is (set to 0 to disable)
+      timer: 3
+
+  # Here you can enable / disable if players should teleport to the spawn when they join
+  teleportOnJoin: true
+
+  # Here you can enable / disable if players should teleport to the spawn when they die
+  teleportOnDeath: true
+
+  # Here you can enable / disable BStats (https://bstats.org/)
+  # There is no performance penalty associated with having bStats enabled and data sent to bStats is fully anonymous
+  BStatsEnabled: true
+
+# In this section you can edit the permissions
 permissions:
   commands:
     admin:
+
+      # The permission for /setspawnpoint <world, x, y, z> (yaw, pitch)
       setSpawnpoint: spawnpointPlugin.commands.admin.setSpawnpoint
+
+      # The permission for /reloadconfig
       reloadConfig: spawnpointPlugin.commands.admin.reloadConfig
+
+    # The permission for /spawn
     spawn:
       teleport: spawnpointPlugin.commands.spawn.teleport
-settings:
-  language: EN
-  commands:
-    spawn:
-      timer: 3
-  teleportOnJoin: true
-  teleportOnDeath: true
-  BStatsEnabled: true
+
+# In this section are the saved data from the plugin
 data:
+
+  # Here you can set the spawnpoint
   spawnpoint:
     world: world
     x: 0
