@@ -93,7 +93,7 @@ public class Main extends JavaPlugin {
 
     public String getPrefix() {
 
-        return getConfig().getString("plugin.prefix").replaceAll("&", "§");
+        return getConfig().getString("settings.prefix").replaceAll("&", "§");
 
     }
 
