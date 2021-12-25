@@ -39,6 +39,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                     Main.getPlugin().saveConfig();
 
                     player.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToPlayerPosition"));
+
                 } else {
 
                     commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs"));
