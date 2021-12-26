@@ -13,6 +13,14 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.TreeMap;
+
 public class Main extends JavaPlugin {
 
     private static Main plugin;
@@ -29,6 +37,7 @@ public class Main extends JavaPlugin {
     }
 
 
+    @Override
     public void onEnable() {
 
         plugin = this;
@@ -75,6 +84,72 @@ public class Main extends JavaPlugin {
 
         pluginManager.registerEvents(new PlayerRespawnListener(), this);
         getConsole().sendMessage(getPrefix() + "§aPlayerRespawnListener.java was successfully loaded and registered!");
+
+    }
+
+
+    @Override
+    public void saveConfig() {
+
+        try {
+
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(getDataFolder(), "config.yml")));
+
+            TreeMap<Integer, String> comments = new TreeMap<>();
+
+            String line;
+            int index = 0;
+
+            while ((line = bufferedReader.readLine()) != null) {
+
+                if (line.contains("#") || line.trim().isEmpty()) {
+
+                    comments.put(index, line);
+
+                }
+
+                index++;
+
+            }
+
+            ArrayList<String> toSave = new ArrayList<>();
+
+            String data = getConfig().saveToString();
+
+            for (String s : data.split("\n")) {
+
+                if (!s.contains("#")) {
+
+                    toSave.add(s);
+
+                }
+
+            }
+
+            for (int i : comments.keySet()) {
+
+                toSave.add(i, comments.get(i));
+
+            }
+
+            StringBuilder stringBuilder = new StringBuilder();
+
+            for (String s : toSave) {
+
+                stringBuilder.append(s);
+                stringBuilder.append("\n");
+
+            }
+
+            stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+
+            Files.write(new File(getDataFolder(), "config.yml").toPath(), stringBuilder.toString().getBytes(StandardCharsets.UTF_8), StandardOpenOption.WRITE);
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
 
     }
 
