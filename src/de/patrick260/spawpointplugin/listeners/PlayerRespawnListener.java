@@ -1,7 +1,7 @@
-package de.patrick260.spawpointPlugin.listeners;
+package de.patrick260.spawpointplugin.listeners;
 
-import de.patrick260.spawpointPlugin.main.Main;
-import de.patrick260.spawpointPlugin.util.LanguageManager;
+import de.patrick260.spawpointplugin.main.SpawnpointPlugin;
+import de.patrick260.spawpointplugin.util.LanguageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -11,14 +11,13 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 
 public class PlayerRespawnListener implements Listener {
 
-    private FileConfiguration config;
+    private LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
 
-    private final LanguageManager languageManager = Main.getPlugin().getLanguageManager();
 
     @EventHandler
     public void onPlayerRespawn(PlayerRespawnEvent event) {
 
-        config = Main.getPlugin().getConfig();
+        FileConfiguration config = SpawnpointPlugin.getPlugin().getConfig();
 
         if (config.getBoolean("settings.teleportOnDeath")) {
 

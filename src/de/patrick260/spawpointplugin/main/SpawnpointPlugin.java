@@ -1,13 +1,13 @@
-package de.patrick260.spawpointPlugin.main;
+package de.patrick260.spawpointplugin.main;
 
-import de.patrick260.spawpointPlugin.commands.ReloadConfigCommand;
-import de.patrick260.spawpointPlugin.commands.SetSpawnpointCommand;
-import de.patrick260.spawpointPlugin.commands.SpawnCommand;
-import de.patrick260.spawpointPlugin.commands.SpawnpointInfoCommand;
-import de.patrick260.spawpointPlugin.listeners.PlayerRespawnListener;
-import de.patrick260.spawpointPlugin.listeners.PlayerJoinListener;
-import de.patrick260.spawpointPlugin.util.BStats;
-import de.patrick260.spawpointPlugin.util.LanguageManager;
+import de.patrick260.spawpointplugin.commands.ReloadConfigCommand;
+import de.patrick260.spawpointplugin.commands.SetSpawnpointCommand;
+import de.patrick260.spawpointplugin.commands.SpawnCommand;
+import de.patrick260.spawpointplugin.commands.SpawnpointInfoCommand;
+import de.patrick260.spawpointplugin.listeners.PlayerRespawnListener;
+import de.patrick260.spawpointplugin.listeners.PlayerJoinListener;
+import de.patrick260.spawpointplugin.util.BStats;
+import de.patrick260.spawpointplugin.util.LanguageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.PluginManager;
@@ -18,21 +18,18 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.TreeMap;
 
-public class Main extends JavaPlugin {
+public class SpawnpointPlugin extends JavaPlugin {
 
-    private static Main plugin;
+    private static SpawnpointPlugin plugin;
 
     private LanguageManager languageManager;
-
-    private BStats bStats;
 
 
     public static void main(String[] args) {
 
-        System.out.println("This is a Minecraft 1.8.8 plugin! Not a Java programm!");
+        System.out.println("This is a Minecraft plugin! Not a Java program!");
 
     }
 
@@ -50,9 +47,9 @@ public class Main extends JavaPlugin {
         getConsole().sendMessage(getPrefix() + "§aLanguage file LANG_" + getConfig().getString("settings.language") + ".yml was loaded successfully!");
 
         registerCommands();
-        registerListener();
+        registerListeners();
 
-        bStats = new BStats(this, 13639);
+        new BStats(this, 13639);
 
         getConsole().sendMessage(getPrefix() + "§aThe plugin was activated successfully!");
 
@@ -75,7 +72,7 @@ public class Main extends JavaPlugin {
 
     }
 
-    private void registerListener() {
+    private void registerListeners() {
 
         PluginManager pluginManager = Bukkit.getPluginManager();
 
@@ -154,7 +151,7 @@ public class Main extends JavaPlugin {
     }
 
 
-    public static Main getPlugin() {
+    public static SpawnpointPlugin getPlugin() {
 
         return plugin;
 

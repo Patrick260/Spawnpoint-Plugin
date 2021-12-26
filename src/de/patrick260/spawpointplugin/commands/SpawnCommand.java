@@ -1,7 +1,7 @@
-package de.patrick260.spawpointPlugin.commands;
+package de.patrick260.spawpointplugin.commands;
 
-import de.patrick260.spawpointPlugin.main.Main;
-import de.patrick260.spawpointPlugin.util.LanguageManager;
+import de.patrick260.spawpointplugin.main.SpawnpointPlugin;
+import de.patrick260.spawpointplugin.util.LanguageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -16,18 +16,17 @@ import java.util.UUID;
 
 public class SpawnCommand implements CommandExecutor {
 
-    private FileConfiguration config;
-
-    private final LanguageManager languageManager = Main.getPlugin().getLanguageManager();
+    private LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
 
     private HashMap<UUID, Integer> taskIDs = new HashMap<>();
 
     private ArrayList<Player> playersInTeleportQueue = new ArrayList<>();
 
+
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
 
-        config = Main.getPlugin().getConfig();
+        FileConfiguration config = SpawnpointPlugin.getPlugin().getConfig();
 
         if (commandSender instanceof Player) {
 
@@ -35,7 +34,7 @@ public class SpawnCommand implements CommandExecutor {
 
             if (args.length == 0) {
 
-                if (player.hasPermission(Main.getPlugin().getConfig().getString("permissions.commands.spawn.teleport"))) {
+                if (player.hasPermission(SpawnpointPlugin.getPlugin().getConfig().getString("permissions.commands.spawn.teleport"))) {
 
                     if (config.getInt("settings.commands.spawn.timer") == 0) {
 
@@ -50,7 +49,7 @@ public class SpawnCommand implements CommandExecutor {
 
                             playersInTeleportQueue.add(player);
 
-                            taskIDs.put(player.getUniqueId(), Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+                            taskIDs.put(player.getUniqueId(), Bukkit.getScheduler().scheduleSyncRepeatingTask(SpawnpointPlugin.getPlugin(), new Runnable() {
 
                                 int countdown = config.getInt("settings.commands.spawn.timer");
 

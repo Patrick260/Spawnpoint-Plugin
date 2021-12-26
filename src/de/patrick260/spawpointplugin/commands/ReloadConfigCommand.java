@@ -1,7 +1,7 @@
-package de.patrick260.spawpointPlugin.commands;
+package de.patrick260.spawpointplugin.commands;
 
-import de.patrick260.spawpointPlugin.main.Main;
-import de.patrick260.spawpointPlugin.util.LanguageManager;
+import de.patrick260.spawpointplugin.main.SpawnpointPlugin;
+import de.patrick260.spawpointplugin.util.LanguageManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,18 +9,19 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 public class ReloadConfigCommand implements CommandExecutor {
 
-    LanguageManager languageManager = Main.getPlugin().getLanguageManager();
+    LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
 
     FileConfiguration config;
+
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
 
-        config = Main.getPlugin().getConfig();
+        config = SpawnpointPlugin.getPlugin().getConfig();
 
         if (commandSender.hasPermission(config.getString("permissions.commands.admin.reloadConfig"))) {
 
-            Main.getPlugin().reloadConfig();
+            SpawnpointPlugin.getPlugin().reloadConfig();
             languageManager.reloadLanguage();
 
             commandSender.sendMessage(languageManager.getText("messages.commands.reloadConfigCommand.reloadSuccess"));

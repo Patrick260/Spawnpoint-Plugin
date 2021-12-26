@@ -1,6 +1,6 @@
-package de.patrick260.spawpointPlugin.listeners;
+package de.patrick260.spawpointplugin.listeners;
 
-import de.patrick260.spawpointPlugin.main.Main;
+import de.patrick260.spawpointplugin.main.SpawnpointPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -10,12 +10,10 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class PlayerJoinListener implements Listener {
 
-    private FileConfiguration config;
-
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
 
-        config = Main.getPlugin().getConfig();
+        FileConfiguration config = SpawnpointPlugin.getPlugin().getConfig();
 
         if (config.getBoolean("settings.teleportOnJoin")) {
 

@@ -1,4 +1,4 @@
-package de.patrick260.spawpointPlugin.util;
+package de.patrick260.spawpointplugin.util;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;

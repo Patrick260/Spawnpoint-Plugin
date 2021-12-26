@@ -1,7 +1,7 @@
-package de.patrick260.spawpointPlugin.commands;
+package de.patrick260.spawpointplugin.commands;
 
-import de.patrick260.spawpointPlugin.main.Main;
-import de.patrick260.spawpointPlugin.util.LanguageManager;
+import de.patrick260.spawpointplugin.main.SpawnpointPlugin;
+import de.patrick260.spawpointplugin.util.LanguageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -11,14 +11,13 @@ import org.bukkit.entity.Player;
 
 public class SetSpawnpointCommand implements CommandExecutor {
 
-    private FileConfiguration config;
+    private LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
 
-    private final LanguageManager languageManager = Main.getPlugin().getLanguageManager();
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
 
-        config = Main.getPlugin().getConfig();
+        FileConfiguration config = SpawnpointPlugin.getPlugin().getConfig();
 
         if (commandSender.hasPermission(config.getString("permissions.commands.admin.setSpawnpoint"))) {
 
@@ -36,7 +35,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                     config.set("data.spawnpoint.yaw", player.getLocation().getYaw());
                     config.set("data.spawnpoint.pitch", player.getLocation().getPitch());
 
-                    Main.getPlugin().saveConfig();
+                    SpawnpointPlugin.getPlugin().saveConfig();
 
                     player.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToPlayerPosition"));
 
@@ -58,7 +57,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         config.set("data.spawnpoint.y", Integer.parseInt(args[1]));
                         config.set("data.spawnpoint.z", Integer.parseInt(args[2]));
 
-                        Main.getPlugin().saveConfig();
+                        SpawnpointPlugin.getPlugin().saveConfig();
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
 
@@ -87,7 +86,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         config.set("data.spawnpoint.y", Integer.parseInt(args[2]));
                         config.set("data.spawnpoint.z", Integer.parseInt(args[3]));
 
-                        Main.getPlugin().saveConfig();
+                        SpawnpointPlugin.getPlugin().saveConfig();
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
 
@@ -117,7 +116,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         config.set("data.spawnpoint.yaw", Integer.parseInt(args[3]));
                         config.set("data.spawnpoint.pitch", Integer.parseInt(args[4]));
 
-                        Main.getPlugin().saveConfig();
+                        SpawnpointPlugin.getPlugin().saveConfig();
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
 
@@ -147,7 +146,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
                         config.set("data.spawnpoint.yaw", Integer.parseInt(args[4]));
                         config.set("data.spawnpoint.pitch", Integer.parseInt(args[5]));
 
-                        Main.getPlugin().saveConfig();
+                        SpawnpointPlugin.getPlugin().saveConfig();
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
 
