@@ -131,15 +131,17 @@ public class SpawnpointPlugin extends JavaPlugin {
 
             StringBuilder stringBuilder = new StringBuilder();
 
-            for (String s : toSave) {
+            for (int i = 0; i < toSave.size(); i++) {
 
-                stringBuilder.append(s);
-                stringBuilder.append("\n");
+                stringBuilder.append(i);
+
+                if (toSave.size() - 1 - i != 0) {
+
+                    stringBuilder.append("\n");
+
+                }
 
             }
-
-            stringBuilder.deleteCharAt(stringBuilder.length() - 1);
-            stringBuilder.deleteCharAt(stringBuilder.length() - 1);
 
             Files.write(new File(getDataFolder(), "config.yml").toPath(), stringBuilder.toString().getBytes(StandardCharsets.UTF_8), StandardOpenOption.WRITE);
 
