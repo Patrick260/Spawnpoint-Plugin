@@ -11,13 +11,11 @@ public class ReloadConfigCommand implements CommandExecutor {
 
     LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
 
-    FileConfiguration config;
-
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
 
-        config = SpawnpointPlugin.getPlugin().getConfig();
+        FileConfiguration config = SpawnpointPlugin.getPlugin().getConfig();
 
         if (commandSender.hasPermission(config.getString("permissions.commands.admin.reloadConfig"))) {
 
