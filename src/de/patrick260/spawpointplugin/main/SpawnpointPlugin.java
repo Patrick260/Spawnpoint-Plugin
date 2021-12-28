@@ -132,7 +132,7 @@ public class SpawnpointPlugin extends JavaPlugin {
 
             for (int i = 0; i < toSave.size(); i++) {
 
-                stringBuilder.append(i);
+                stringBuilder.append(toSave.get(i));
 
                 if (toSave.size() - 1 - i != 0) {
 
