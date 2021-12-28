@@ -1,6 +1,6 @@
 name: SpawnpointPlugin
 prefix: SpawnpointPlugin
-version: 1.2.3
+version: 1.2.4
 author: Patrick260
 website: https://www.spigotmc.org/resources/spawnpoint-plugin-1-8-x-1-18-x.96749/
 main: de.patrick260.spawpointplugin.main.SpawnpointPlugin
