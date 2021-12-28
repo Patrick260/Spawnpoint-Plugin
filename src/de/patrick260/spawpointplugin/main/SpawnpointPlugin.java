@@ -14,9 +14,6 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
@@ -109,6 +106,8 @@ public class SpawnpointPlugin extends JavaPlugin {
 
             }
 
+            bufferedReader.close();
+
             ArrayList<String> toSave = new ArrayList<>();
 
             String data = getConfig().saveToString();
@@ -143,7 +142,10 @@ public class SpawnpointPlugin extends JavaPlugin {
 
             }
 
-            Files.write(new File(getDataFolder(), "config.yml").toPath(), stringBuilder.toString().getBytes(StandardCharsets.UTF_8), StandardOpenOption.WRITE);
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File(getDataFolder(), "config.yml")));
+            bufferedWriter.write(stringBuilder.toString());
+            bufferedWriter.flush();
+            bufferedWriter.close();
 
         } catch (IOException e) {
 
