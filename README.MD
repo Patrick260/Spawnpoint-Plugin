@@ -16,7 +16,7 @@ Attention, these are the default permissions. You can change them in the config.
 
     spawnpointPlugin.commands.admin.setSpawnpoint - The permissions is needed to set the spawnpoint.
     spawnpointPlugin.commands.spawn.teleport - The permission is needed to teleport you to the spawnpoint.
-    spawnpointPlugin.commands.admin.reloadConfig - The permission is nedded to reload the config.
+    spawnpointPlugin.commands.admin.reloadConfig - The permission is needed to reload the config.
 
 ## Features
 - Set a spawnpoint where player spawn when they join, die or do /spawn
