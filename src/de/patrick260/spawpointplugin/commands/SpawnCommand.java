@@ -30,11 +30,11 @@ import java.util.UUID;
 
 public class SpawnCommand implements CommandExecutor {
 
-    private LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
+    private final LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
 
-    private HashMap<UUID, Integer> taskIDs = new HashMap<>();
+    private final HashMap<UUID, Integer> taskIDs = new HashMap<>();
 
-    private ArrayList<Player> playersInTeleportQueue = new ArrayList<>();
+    private final ArrayList<Player> playersInTeleportQueue = new ArrayList<>();
 
 
     @Override
@@ -55,7 +55,7 @@ public class SpawnCommand implements CommandExecutor {
                         Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), (float) config.getDouble("data.spawnpoint.yaw"), (float) config.getDouble("data.spawnpoint.pitch"));
 
                         player.teleport(location);
-                        player.sendMessage(languageManager.getText("messages.commands.spawnCommand.succesTeleport"));
+                        player.sendMessage(languageManager.getText("messages.commands.spawnCommand.successfullyTeleported"));
 
                     } else {
 
@@ -75,7 +75,7 @@ public class SpawnCommand implements CommandExecutor {
                                         Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), (float) config.getDouble("data.spawnpoint.yaw"), (float) config.getDouble("data.spawnpoint.pitch"));
 
                                         player.teleport(location);
-                                        player.sendMessage(languageManager.getText("messages.commands.spawnCommand.succesTeleport"));
+                                        player.sendMessage(languageManager.getText("messages.commands.spawnCommand.successfullyTeleported"));
 
                                         playersInTeleportQueue.remove(player);
 

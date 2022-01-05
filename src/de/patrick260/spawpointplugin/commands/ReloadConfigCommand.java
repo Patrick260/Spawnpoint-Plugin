@@ -23,7 +23,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 public class ReloadConfigCommand implements CommandExecutor {
 
-    LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
+    private final LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
 
 
     @Override

@@ -7,14 +7,14 @@ messages:
       noPermissions: §cDazu hast du keine Rechte!
       onlyPlayerCanExecute: §cNur Spieler koennen diesen Command ausfuehren!
     spawnCommand:
-      succesTeleport: §aDu wurdest zum Spawn teleportiert!
+      successfullyTeleported: §aDu wurdest zum Spawn teleportiert!
       teleportCountdown: §aDu wirst in §c%countdown% §aSekunden zum Spawn teleportiert!
       wrongSyntax: §6Falsche Syntax! Bitte benutze §c/spawn §6!
     setSpawnpointCommand:
-      succesSetSpawnpointToPlayerPosition: §aDer Spawnpunkt wurde erfolgreich auf deine Position gesetzt!
-      succesSetSpawnpointToCoordinates: §aDer Spawnpunkt wurde erfolgreich auf die angegebenen Koordinaten gesetzt!
+      successfullySetSpawnpointToPlayerPosition: §aDer Spawnpunkt wurde erfolgreich auf deine Position gesetzt!
+      successfullySetSpawnpointToCoordinates: §aDer Spawnpunkt wurde erfolgreich auf die angegebenen Koordinaten gesetzt!
       consoleSetSpawnpointWithWrongArgs: §6Falsche Syntax! Bitte benutze §c/setspawnpoint <world, x, y, z> (yaw, pitch) §6!
       failToSetSpawnpointInvalidInput: §cDer Spawnpunkt wurde nicht gesetzt, da die Eingabe ungültig war!
-      failToSetSpawnpointUnexistingWorld: §cDer Spawnpoint wurde nicht gesetzt, da die angegebene Welt nicht existiert!
+      failToSetSpawnpointNoSuchWorld: §cDer Spawnpoint wurde nicht gesetzt, da die angegebene Welt nicht existiert!
     reloadConfigCommand:
       reloadSuccess: §aDie Config wurde erfolgreich neugeladen!

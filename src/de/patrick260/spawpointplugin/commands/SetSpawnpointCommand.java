@@ -25,7 +25,7 @@ import org.bukkit.entity.Player;
 
 public class SetSpawnpointCommand implements CommandExecutor {
 
-    private LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
+    private final LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
 
 
     @Override
@@ -51,7 +51,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                     SpawnpointPlugin.getPlugin().saveConfig();
 
-                    player.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToPlayerPosition"));
+                    player.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToPlayerPosition"));
 
                 } else {
 
@@ -73,7 +73,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                         SpawnpointPlugin.getPlugin().saveConfig();
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates"));
 
 
                     } catch (NumberFormatException exception) {
@@ -102,7 +102,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                         SpawnpointPlugin.getPlugin().saveConfig();
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates"));
 
                     } catch (NumberFormatException exception) {
 
@@ -112,7 +112,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                 } else {
 
-                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointUnexistingWorld"));
+                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointNoSuchWorld"));
 
                 }
 
@@ -132,7 +132,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                         SpawnpointPlugin.getPlugin().saveConfig();
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates"));
 
                     } catch (NumberFormatException exception) {
 
@@ -162,7 +162,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                         SpawnpointPlugin.getPlugin().saveConfig();
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.succesSetSpawnpointToCoordinates"));
+                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates"));
 
                     } catch (NumberFormatException exception) {
 
@@ -172,7 +172,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                 } else {
 
-                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointUnexistingWorld"));
+                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointNoSuchWorld"));
 
                 }
 

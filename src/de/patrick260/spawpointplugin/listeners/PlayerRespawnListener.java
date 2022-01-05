@@ -25,7 +25,7 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 
 public class PlayerRespawnListener implements Listener {
 
-    private LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
+    private final LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
 
 
     @EventHandler
