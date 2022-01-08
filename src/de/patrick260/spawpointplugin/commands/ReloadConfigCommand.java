@@ -21,15 +21,15 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 
-public class ReloadConfigCommand implements CommandExecutor {
+public final class ReloadConfigCommand implements CommandExecutor {
 
     private final LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
 
 
     @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
+    public boolean onCommand(final CommandSender commandSender, final Command command, final String label, final String[] args) {
 
-        FileConfiguration config = SpawnpointPlugin.getPlugin().getConfig();
+        final FileConfiguration config = SpawnpointPlugin.getPlugin().getConfig();
 
         if (commandSender.hasPermission(config.getString("permissions.commands.admin.reloadConfig"))) {
 

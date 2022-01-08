@@ -20,9 +20,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 
-public class BStats {
+public final class BStats {
 
-    public BStats(JavaPlugin plugin, int serviceID) {
+    public BStats(final JavaPlugin plugin, final int serviceID) {
 
         if (SpawnpointPlugin.getPlugin().getConfig().getBoolean("settings.BStatsEnabled")) {
 

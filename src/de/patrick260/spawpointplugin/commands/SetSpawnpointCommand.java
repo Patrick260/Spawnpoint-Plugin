@@ -23,15 +23,15 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-public class SetSpawnpointCommand implements CommandExecutor {
+public final class SetSpawnpointCommand implements CommandExecutor {
 
     private final LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
 
 
     @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
+    public boolean onCommand(final CommandSender commandSender, final Command command, final String label, final String[] args) {
 
-        FileConfiguration config = SpawnpointPlugin.getPlugin().getConfig();
+        final FileConfiguration config = SpawnpointPlugin.getPlugin().getConfig();
 
         if (commandSender.hasPermission(config.getString("permissions.commands.admin.setSpawnpoint"))) {
 
@@ -40,7 +40,7 @@ public class SetSpawnpointCommand implements CommandExecutor {
 
                 if (commandSender instanceof Player) {
 
-                    Player player = (Player) commandSender;
+                    final Player player = (Player) commandSender;
 
                     config.set("data.spawnpoint.world", Bukkit.getWorld(player.getWorld().getName()).getName());
                     config.set("data.spawnpoint.x", player.getLocation().getX());

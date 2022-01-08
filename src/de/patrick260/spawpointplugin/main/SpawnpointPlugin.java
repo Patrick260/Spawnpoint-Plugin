@@ -31,14 +31,14 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
-public class SpawnpointPlugin extends JavaPlugin {
+public final class SpawnpointPlugin extends JavaPlugin {
 
     private static SpawnpointPlugin plugin;
 
     private LanguageManager languageManager;
 
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         System.out.println("This is a Minecraft plugin! Not a Java program!");
 
@@ -85,7 +85,7 @@ public class SpawnpointPlugin extends JavaPlugin {
 
     private void registerListeners() {
 
-        PluginManager pluginManager = Bukkit.getPluginManager();
+        final PluginManager pluginManager = Bukkit.getPluginManager();
 
         pluginManager.registerEvents(new PlayerJoinListener(), this);
         getConsole().sendMessage(getPrefix() + "§aPlayerJoinListener.java was successfully loaded and registered!");
@@ -101,9 +101,9 @@ public class SpawnpointPlugin extends JavaPlugin {
 
         try {
 
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(getDataFolder(), "config.yml")));
+            final BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(getDataFolder(), "config.yml")));
 
-            TreeMap<Integer, String> comments = new TreeMap<>();
+            final TreeMap<Integer, String> comments = new TreeMap<>();
 
             String line;
             int index = 0;
@@ -122,11 +122,11 @@ public class SpawnpointPlugin extends JavaPlugin {
 
             bufferedReader.close();
 
-            ArrayList<String> toSave = new ArrayList<>();
+            final ArrayList<String> toSave = new ArrayList<>();
 
-            String data = getConfig().saveToString();
+            final String data = getConfig().saveToString();
 
-            for (String s : data.split("\n")) {
+            for (final String s : data.split("\n")) {
 
                 if (!s.contains("#")) {
 
@@ -136,13 +136,13 @@ public class SpawnpointPlugin extends JavaPlugin {
 
             }
 
-            for (int i : comments.keySet()) {
+            for (final int i : comments.keySet()) {
 
                 toSave.add(i, comments.get(i));
 
             }
 
-            StringBuilder stringBuilder = new StringBuilder();
+            final StringBuilder stringBuilder = new StringBuilder();
 
             for (int i = 0; i < toSave.size(); i++) {
 
@@ -156,7 +156,7 @@ public class SpawnpointPlugin extends JavaPlugin {
 
             }
 
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File(getDataFolder(), "config.yml")));
+            final BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File(getDataFolder(), "config.yml")));
             bufferedWriter.write(stringBuilder.toString());
             bufferedWriter.flush();
             bufferedWriter.close();

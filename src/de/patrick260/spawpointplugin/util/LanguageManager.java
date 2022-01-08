@@ -20,14 +20,14 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 
-public class LanguageManager {
+public final class LanguageManager {
 
     private String language;
 
     private FileConfiguration languageFile;
 
 
-    public LanguageManager(String language) {
+    public LanguageManager(final String language) {
 
         SpawnpointPlugin.getPlugin().saveResource("LANG/LANG_DE.yml", false);
         SpawnpointPlugin.getPlugin().saveResource("LANG/LANG_EN.yml", false);
@@ -62,7 +62,7 @@ public class LanguageManager {
     }
 
 
-    public String getText(String path) {
+    public String getText(final String path) {
 
         return languageFile.getString(path).replaceAll((char)194+"","").replaceAll("&", "§");
 

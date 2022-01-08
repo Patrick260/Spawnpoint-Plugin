@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class SpawnCommand implements CommandExecutor {
+public final class SpawnCommand implements CommandExecutor {
 
     private final LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
 
@@ -38,13 +38,13 @@ public class SpawnCommand implements CommandExecutor {
 
 
     @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
+    public boolean onCommand(final CommandSender commandSender, final Command command, final String label, final String[] args) {
 
-        FileConfiguration config = SpawnpointPlugin.getPlugin().getConfig();
+        final FileConfiguration config = SpawnpointPlugin.getPlugin().getConfig();
 
         if (commandSender instanceof Player) {
 
-            Player player = (Player) commandSender;
+            final Player player = (Player) commandSender;
 
             if (args.length == 0) {
 
@@ -52,7 +52,7 @@ public class SpawnCommand implements CommandExecutor {
 
                     if (config.getInt("settings.commands.spawn.timer") == 0) {
 
-                        Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), (float) config.getDouble("data.spawnpoint.yaw"), (float) config.getDouble("data.spawnpoint.pitch"));
+                        final Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), (float) config.getDouble("data.spawnpoint.yaw"), (float) config.getDouble("data.spawnpoint.pitch"));
 
                         player.teleport(location);
                         player.sendMessage(languageManager.getText("messages.commands.spawnCommand.successfullyTeleported"));
@@ -72,7 +72,7 @@ public class SpawnCommand implements CommandExecutor {
 
                                     if (countdown <= 0) {
 
-                                        Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), (float) config.getDouble("data.spawnpoint.yaw"), (float) config.getDouble("data.spawnpoint.pitch"));
+                                        final Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), (float) config.getDouble("data.spawnpoint.yaw"), (float) config.getDouble("data.spawnpoint.pitch"));
 
                                         player.teleport(location);
                                         player.sendMessage(languageManager.getText("messages.commands.spawnCommand.successfullyTeleported"));
