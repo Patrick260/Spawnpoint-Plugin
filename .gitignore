@@ -1,6 +1,2 @@
 .idea
-out
-META-INF
-SpawnpointPlugin.iml
-Spawnpoint-Plugin.iml
-.github
+target
