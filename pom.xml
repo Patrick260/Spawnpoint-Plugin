@@ -72,6 +72,7 @@
 
             <resource>
                 <directory></directory>
+
                 <includes>
                     <include>/LICENSE</include>
                     <include>/THIRD-PARTY-NOTICES</include>
