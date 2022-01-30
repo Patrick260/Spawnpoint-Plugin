@@ -5,6 +5,8 @@ may be distributed under licenses different from Patrick260/Spawnpoint-Plugin
 software.
 If you see that a required notice is missing or if there is any problem with a notice, please open an issue and describe what's missing / what's the problem.
 
+Date of last review: Sun Jan 30 2022 11:30:19 GMT+0100
+
 Maven Dependencies:
 -----------
 Dependency: Gson
