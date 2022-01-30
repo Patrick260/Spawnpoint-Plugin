@@ -134,6 +134,7 @@ public final class SpawnCommand implements CommandExecutor {
     public static void removePlayerFromQueue(Player player) {
 
         playersInTeleportQueue.remove(player);
+        playerLocations.remove(player.getUniqueId());
         Bukkit.getScheduler().cancelTask(taskIDs.get(player.getUniqueId()));
 
     }
