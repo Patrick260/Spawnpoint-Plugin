@@ -85,6 +85,7 @@ public final class SpawnCommand implements CommandExecutor {
                                         player.sendMessage(languageManager.getText("messages.commands.spawnCommand.successfullyTeleported"));
 
                                         playersInTeleportQueue.remove(player);
+                                        playerLocations.remove(player.getUniqueId());
 
                                         Bukkit.getScheduler().cancelTask(taskIDs.get(player.getUniqueId()));
                                         taskIDs.remove(player.getUniqueId());
