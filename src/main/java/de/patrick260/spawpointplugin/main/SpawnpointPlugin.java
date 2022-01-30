@@ -21,6 +21,7 @@ import de.patrick260.spawpointplugin.commands.ReloadConfigCommand;
 import de.patrick260.spawpointplugin.commands.SetSpawnpointCommand;
 import de.patrick260.spawpointplugin.commands.SpawnCommand;
 import de.patrick260.spawpointplugin.commands.SpawnpointInfoCommand;
+import de.patrick260.spawpointplugin.listeners.PlayerMoveListener;
 import de.patrick260.spawpointplugin.listeners.PlayerRespawnListener;
 import de.patrick260.spawpointplugin.listeners.PlayerJoinListener;
 import de.patrick260.spawpointplugin.util.BStats;
@@ -95,6 +96,9 @@ public final class SpawnpointPlugin extends JavaPlugin {
 
         pluginManager.registerEvents(new PlayerRespawnListener(), this);
         getConsole().sendMessage(getPrefix() + "§aPlayerRespawnListener.java was successfully loaded and registered!");
+
+        pluginManager.registerEvents(new PlayerMoveListener(), this);
+        getConsole().sendMessage(getPrefix() + "§aPlayerMoveListener.java was successfully loaded and registered!");
 
     }
 

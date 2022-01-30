@@ -35,9 +35,9 @@ public final class SpawnCommand implements CommandExecutor {
 
     private final LanguageManager languageManager = SpawnpointPlugin.getPlugin().getLanguageManager();
 
-    private final HashMap<UUID, Integer> taskIDs = new HashMap<>();
+    private static final HashMap<UUID, Integer> taskIDs = new HashMap<>();
 
-    private final ArrayList<Player> playersInTeleportQueue = new ArrayList<>();
+    private static final ArrayList<Player> playersInTeleportQueue = new ArrayList<>();
 
 
     @Override
@@ -62,7 +62,7 @@ public final class SpawnCommand implements CommandExecutor {
 
                     } else {
 
-                        if (!playersInTeleportQueue.contains(player)) {
+                        if (!isPlayerInQueue(player)) {
 
                             playersInTeleportQueue.add(player);
 
@@ -118,6 +118,19 @@ public final class SpawnCommand implements CommandExecutor {
         }
 
         return true;
+
+    }
+
+    public static boolean isPlayerInQueue(Player player) {
+
+        return playersInTeleportQueue.contains(player);
+
+    }
+
+    public static void removePlayerFromQueue(Player player) {
+
+        playersInTeleportQueue.remove(player);
+        Bukkit.getScheduler().cancelTask(taskIDs.get(player.getUniqueId()));
 
     }
 

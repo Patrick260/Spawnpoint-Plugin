@@ -19,6 +19,8 @@ messages:
   listeners:
     onPlayerRespawn:
       teleportMessage: §cYou were teleported to the spawn beacause you died!
+    onPlayerMove:
+      teleportCanceled: §cThe teleportation was canceled because you moved!
   commands:
     general:
       noPermissions: §cYou don't have permissions to do that!
