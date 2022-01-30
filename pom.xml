@@ -127,7 +127,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>de.patrick260.memory.main.Memory</mainClass>
+                            <mainClass>de.patrick260.spawnpointplugin.main.SpawnpointPlugin</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
