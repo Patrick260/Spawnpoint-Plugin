@@ -21,7 +21,7 @@ version: 1.2.5
 author: Patrick260
 website: https://www.spigotmc.org/resources/spawnpoint-plugin-1-8-x-1-18-x.96749/
 main: de.patrick260.spawpointplugin.main.SpawnpointPlugin
-description: A simple Spawnpoint Plugin for spigot
+description: A simple spawnpoint plugin for Spigot!
 commands:
   setspawnpoint:
     description: Set the spawnpoint
