@@ -37,6 +37,8 @@ public final class SpawnCommand implements CommandExecutor {
 
     private static final HashMap<UUID, Integer> taskIDs = new HashMap<>();
 
+    private static final HashMap<UUID, Location> playerLocations = new HashMap<>();
+
     private static final ArrayList<Player> playersInTeleportQueue = new ArrayList<>();
 
 
@@ -65,6 +67,8 @@ public final class SpawnCommand implements CommandExecutor {
                         if (!isPlayerInQueue(player)) {
 
                             playersInTeleportQueue.add(player);
+
+                            playerLocations.put(player.getUniqueId(), player.getLocation());
 
                             taskIDs.put(player.getUniqueId(), Bukkit.getScheduler().scheduleSyncRepeatingTask(SpawnpointPlugin.getPlugin(), new Runnable() {
 
@@ -131,6 +135,12 @@ public final class SpawnCommand implements CommandExecutor {
 
         playersInTeleportQueue.remove(player);
         Bukkit.getScheduler().cancelTask(taskIDs.get(player.getUniqueId()));
+
+    }
+
+    public static Location getOldPlayerLocation(Player player) {
+
+        return playerLocations.get(player.getUniqueId());
 
     }
 

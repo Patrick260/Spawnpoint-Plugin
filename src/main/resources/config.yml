@@ -37,6 +37,18 @@ settings:
       # Here you can set the time how long the teleport delay is (set to 0 to disable)
       timer: 3
 
+  # Here you can configure if the teleportation should be canceled if the player move
+  cancelTeleportOnMove:
+
+    # Here you can enable / disable the canceling of teleportation on move
+    'on': true
+
+    # Here you can set how many blocks players have to move in a specific direction until the teleport should be canceled
+    minMoved:
+      x: 1
+      y: 2
+      z: 1
+
   # Here you can enable / disable if players should teleport to the spawn when they join
   teleportOnJoin: true
 
