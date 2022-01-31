@@ -24,7 +24,7 @@ public class PlayerMoveListener implements Listener {
 
             final Player player = event.getPlayer();
 
-            Location oldLocation = SpawnCommand.getOldPlayerLocation(player);
+            final Location oldLocation = SpawnCommand.getOldPlayerLocation(player);
 
             if (SpawnCommand.isPlayerInQueue(player) && ((oldLocation.getX() - event.getTo().getX()) >= config.getDouble("settings.cancelTeleportOnMove.minMoved.x")
                                                             || (oldLocation.getX() - event.getTo().getX()) <= (config.getDouble("settings.cancelTeleportOnMove.minMoved.x")

@@ -127,13 +127,13 @@ public final class SpawnCommand implements CommandExecutor {
 
     }
 
-    public static boolean isPlayerInQueue(Player player) {
+    public static boolean isPlayerInQueue(final Player player) {
 
         return playersInTeleportQueue.contains(player);
 
     }
 
-    public static void removePlayerFromQueue(Player player) {
+    public static void removePlayerFromQueue(final Player player) {
 
         Bukkit.getScheduler().cancelTask(taskIDs.get(player.getUniqueId()));
 
@@ -143,7 +143,7 @@ public final class SpawnCommand implements CommandExecutor {
 
     }
 
-    public static Location getOldPlayerLocation(Player player) {
+    public static Location getOldPlayerLocation(final Player player) {
 
         return playerLocations.get(player.getUniqueId());
 
