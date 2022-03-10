@@ -168,9 +168,9 @@ public final class SpawnpointPlugin extends JavaPlugin {
             bufferedWriter.flush();
             bufferedWriter.close();
 
-        } catch (IOException e) {
+        } catch (final IOException exception) {
 
-            e.printStackTrace();
+            exception.printStackTrace();
 
         }
 
