@@ -79,7 +79,7 @@ public final class SetSpawnpointCommand implements CommandExecutor {
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates"));
 
 
-                    } catch (NumberFormatException exception) {
+                    } catch (final NumberFormatException exception) {
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointInvalidInput"));
 
@@ -107,7 +107,7 @@ public final class SetSpawnpointCommand implements CommandExecutor {
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates"));
 
-                    } catch (NumberFormatException exception) {
+                    } catch (final NumberFormatException exception) {
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs"));
 
@@ -137,7 +137,7 @@ public final class SetSpawnpointCommand implements CommandExecutor {
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates"));
 
-                    } catch (NumberFormatException exception) {
+                    } catch (final NumberFormatException exception) {
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointInvalidInput"));
 
@@ -167,7 +167,7 @@ public final class SetSpawnpointCommand implements CommandExecutor {
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates"));
 
-                    } catch (NumberFormatException exception) {
+                    } catch (final NumberFormatException exception) {
 
                         commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointInvalidInput"));
 
