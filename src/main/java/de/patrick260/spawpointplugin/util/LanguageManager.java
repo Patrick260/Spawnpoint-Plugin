@@ -42,14 +42,6 @@ public final class LanguageManager {
     }
 
 
-    public void reloadLanguage() {
-
-        this.language = SpawnpointPlugin.getPlugin().getConfig().getString("settings.language");
-
-        loadLangFile();
-
-    }
-
     public void loadLangFile() {
 
         if (!new File(SpawnpointPlugin.getPlugin().getDataFolder()+ "/LANG/LANG_" + language + ".yml").exists()) {
@@ -61,6 +53,14 @@ public final class LanguageManager {
             languageFile = YamlConfiguration.loadConfiguration(new File(SpawnpointPlugin.getPlugin().getDataFolder() + "/LANG/LANG_" + language + ".yml"));
 
         }
+
+    }
+
+    public void reloadLanguage() {
+
+        this.language = SpawnpointPlugin.getPlugin().getConfig().getString("settings.language");
+
+        loadLangFile();
 
     }
 
