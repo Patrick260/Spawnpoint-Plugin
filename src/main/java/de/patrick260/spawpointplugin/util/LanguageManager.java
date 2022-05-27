@@ -67,7 +67,7 @@ public final class LanguageManager {
 
     public String getText(final String path) {
 
-        return languageFile.getString(path).replaceAll((char)194+"","").replaceAll("&", "§");
+        return languageFile.getString(path).replaceAll((char) 194 + "", "").replaceAll("&", "§");
 
     }
 
