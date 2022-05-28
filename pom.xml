@@ -24,7 +24,7 @@
 
     <groupId>de.patrick260.spawnpointplugin</groupId>
     <artifactId>Spawnpoint-Plugin</artifactId>
-    <version>1.3.0</version>
+    <version>1.4.0</version>
     <packaging>jar</packaging>
 
     <name>Spawnpoint-Plugin</name>
