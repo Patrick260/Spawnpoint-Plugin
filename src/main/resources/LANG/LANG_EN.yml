@@ -18,7 +18,7 @@
 messages:
   listeners:
     onPlayerRespawn:
-      teleportMessage: §cYou were teleported to the spawn beacause you died!
+      teleportMessage: §cYou were teleported to the spawn because you died!
     onPlayerMove:
       teleportCanceled: §cThe teleportation was canceled because you moved!
   commands:
@@ -30,8 +30,8 @@ messages:
       teleportCountdown: §aYou will be teleported to the spawn in §c%countdown% §aseconds!
       wrongSyntax: §6Wrong Syntax! Please use §c/spawn §6!
     setSpawnpointCommand:
-      successfullySetSpawnpointToPlayerPosition: §aThe spawnpoint was succesfully set to your position!
-      successfullySetSpawnpointToCoordinates: §aThe spawnpoint was succesfully set to the given coordinates!
+      successfullySetSpawnpointToPlayerPosition: §aThe spawnpoint was successfully set to your position!
+      successfullySetSpawnpointToCoordinates: §aThe spawnpoint was successfully set to the given coordinates!
       consoleSetSpawnpointWithWrongArgs: §6Wrong Syntax! Please use §c/setspawnpoint <world, x, y, z> (yaw, pitch) §6!
       failToSetSpawnpointInvalidInput: §cThe spawnpoint wasn't set because the given data was invalid!
       failToSetSpawnpointUnexistingWorld: §cThe spawnpoint wasn't set because the given world don't exists!
