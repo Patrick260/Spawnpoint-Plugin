@@ -18,6 +18,7 @@
 package de.patrick260.spawpointplugin.util;
 
 import de.patrick260.spawpointplugin.main.SpawnpointPlugin;
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -64,6 +65,24 @@ public final class LanguageManager {
 
     }
 
+
+    public void sendMessage(final CommandSender commandSender, final String path, final String... placeholders) {
+
+        if (!getText(path).equals("%noMessage%")) {
+
+            String message = getText(path);
+
+            for (final String placeholder: placeholders) {
+
+                message = message.replaceAll(placeholder.split(":")[0], placeholder.split(":")[1]);
+
+            }
+
+            commandSender.sendMessage(message);
+
+        }
+
+    }
 
     public String getText(final String path) {
 
