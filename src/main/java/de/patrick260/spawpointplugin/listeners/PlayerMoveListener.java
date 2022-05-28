@@ -39,7 +39,7 @@ public final class PlayerMoveListener implements Listener {
 
                 SpawnCommand.removePlayerFromQueue(player);
 
-                player.sendMessage(languageManager.getText("messages.listeners.onPlayerMove.teleportCanceled"));
+                languageManager.sendMessage(player, "messages.listeners.onPlayerMove.teleportCanceled");
 
             }
 

@@ -42,7 +42,7 @@ public final class PlayerRespawnListener implements Listener {
 
             event.setRespawnLocation(location);
 
-            event.getPlayer().sendMessage(languageManager.getText("messages.listeners.onPlayerRespawn.teleportMessage"));
+            languageManager.sendMessage(event.getPlayer(), "messages.listeners.onPlayerRespawn.teleportMessage");
 
         }
 

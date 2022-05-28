@@ -60,7 +60,7 @@ public final class SpawnCommand implements CommandExecutor {
                         final Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), (float) config.getDouble("data.spawnpoint.yaw"), (float) config.getDouble("data.spawnpoint.pitch"));
 
                         player.teleport(location);
-                        player.sendMessage(languageManager.getText("messages.commands.spawnCommand.successfullyTeleported"));
+                        languageManager.sendMessage(player, "messages.commands.spawnCommand.successfullyTeleported");
 
                     } else {
 
@@ -82,7 +82,7 @@ public final class SpawnCommand implements CommandExecutor {
                                         final Location location = new Location(Bukkit.getWorld(config.getString("data.spawnpoint.world")), config.getDouble("data.spawnpoint.x"), config.getDouble("data.spawnpoint.y"), config.getDouble("data.spawnpoint.z"), (float) config.getDouble("data.spawnpoint.yaw"), (float) config.getDouble("data.spawnpoint.pitch"));
 
                                         player.teleport(location);
-                                        player.sendMessage(languageManager.getText("messages.commands.spawnCommand.successfullyTeleported"));
+                                        languageManager.sendMessage(player, "messages.commands.spawnCommand.successfullyTeleported");
 
                                         playersInTeleportQueue.remove(player);
                                         playerLocations.remove(player.getUniqueId());
@@ -92,7 +92,7 @@ public final class SpawnCommand implements CommandExecutor {
 
                                     } else {
 
-                                        player.sendMessage(languageManager.getText("messages.commands.spawnCommand.teleportCountdown").replace("%countdown%", Integer.toString(countdown)));
+                                        languageManager.sendMessage(player, "messages.commands.spawnCommand.teleportCountdown", "%countdown%:" + countdown);
                                         countdown--;
 
                                     }
@@ -107,19 +107,19 @@ public final class SpawnCommand implements CommandExecutor {
 
                 } else {
 
-                    player.sendMessage(languageManager.getText("messages.commands.general.noPermissions"));
+                    languageManager.sendMessage(player, "messages.commands.general.noPermissions");
 
                 }
 
             } else {
 
-                player.sendMessage(languageManager.getText("messages.commands.spawnCommand.wrongSyntax"));
+                languageManager.sendMessage(player, "messages.commands.spawnCommand.wrongSyntax");
 
             }
 
         } else {
 
-            commandSender.sendMessage(languageManager.getText("messages.commands.general.onlyPlayerCanExecute"));
+            languageManager.sendMessage(commandSender, "messages.commands.general.onlyPlayerCanExecute");
 
         }
 

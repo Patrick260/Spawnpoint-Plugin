@@ -39,11 +39,11 @@ public final class ReloadConfigCommand implements CommandExecutor {
             SpawnpointPlugin.getPlugin().reloadConfig();
             languageManager.reloadLanguage();
 
-            commandSender.sendMessage(languageManager.getText("messages.commands.reloadConfigCommand.reloadSuccess"));
+            languageManager.sendMessage(commandSender, "messages.commands.reloadConfigCommand.reloadSuccess");
 
         } else {
 
-            commandSender.sendMessage(languageManager.getText("messages.commands.general.noPermissions"));
+            languageManager.sendMessage(commandSender, "messages.commands.general.noPermissions");
 
         }
 

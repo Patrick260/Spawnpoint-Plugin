@@ -54,11 +54,11 @@ public final class SetSpawnpointCommand implements CommandExecutor {
 
                     SpawnpointPlugin.getPlugin().saveConfig();
 
-                    player.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToPlayerPosition"));
+                    languageManager.sendMessage(player, "messages.commands.setSpawnpointCommand.successfullySetSpawnpointToPlayerPosition");
 
                 } else {
 
-                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs"));
+                    languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs");
 
                 }
 
@@ -76,18 +76,18 @@ public final class SetSpawnpointCommand implements CommandExecutor {
 
                         SpawnpointPlugin.getPlugin().saveConfig();
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates"));
+                        languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates");
 
 
                     } catch (final NumberFormatException exception) {
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointInvalidInput"));
+                        languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.failToSetSpawnpointInvalidInput");
 
                     }
 
                 } else {
 
-                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs"));
+                    languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs");
 
                 }
 
@@ -105,17 +105,17 @@ public final class SetSpawnpointCommand implements CommandExecutor {
 
                         SpawnpointPlugin.getPlugin().saveConfig();
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates"));
+                        languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates");
 
                     } catch (final NumberFormatException exception) {
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs"));
+                        languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs");
 
                     }
 
                 } else {
 
-                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointNoSuchWorld"));
+                    languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.failToSetSpawnpointNoSuchWorld");
 
                 }
 
@@ -135,17 +135,17 @@ public final class SetSpawnpointCommand implements CommandExecutor {
 
                         SpawnpointPlugin.getPlugin().saveConfig();
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates"));
+                        languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates");
 
                     } catch (final NumberFormatException exception) {
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointInvalidInput"));
+                        languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.failToSetSpawnpointInvalidInput");
 
                     }
 
                 } else {
 
-                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs"));
+                    languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs");
 
                 }
 
@@ -165,29 +165,29 @@ public final class SetSpawnpointCommand implements CommandExecutor {
 
                         SpawnpointPlugin.getPlugin().saveConfig();
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates"));
+                        languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.successfullySetSpawnpointToCoordinates");
 
                     } catch (final NumberFormatException exception) {
 
-                        commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointInvalidInput"));
+                        languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.failToSetSpawnpointInvalidInput");
 
                     }
 
                 } else {
 
-                    commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.failToSetSpawnpointNoSuchWorld"));
+                    languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.failToSetSpawnpointNoSuchWorld");
 
                 }
 
             } else {
 
-                commandSender.sendMessage(languageManager.getText("messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs"));
+                languageManager.sendMessage(commandSender, "messages.commands.setSpawnpointCommand.consoleSetSpawnpointWithWrongArgs");
 
             }
 
         } else {
 
-            commandSender.sendMessage(languageManager.getText("messages.commands.general.noPermissions"));
+            languageManager.sendMessage(commandSender, "messages.commands.general.noPermissions");
 
         }
 
