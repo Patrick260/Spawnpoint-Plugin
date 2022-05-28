@@ -30,7 +30,7 @@ commands:
     description: Teleport you to the spawn
     usage: /spawn
   spawnpointplugin-info:
-    description: Display infos about the plugin
+    description: Display info's about the plugin
     usage: /spawnpointplugin-info
   spawnpointplugin-reloadconfig:
     description: Reload the config.yml
