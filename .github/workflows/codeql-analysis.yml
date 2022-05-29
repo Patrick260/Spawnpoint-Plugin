@@ -31,12 +31,6 @@ jobs:
       uses: github/codeql-action/init@v2
       with:
         languages: ${{ matrix.language }}
-        
-    - name: Setup Java JDK
-      uses: actions/setup-java@v3.3.0
-      with:
-        distribution: adopt
-        java-version: 16
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
