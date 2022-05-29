@@ -28,7 +28,7 @@
     <packaging>jar</packaging>
 
     <name>Spawnpoint-Plugin</name>
-    <description>A simple spawnpoint plugin for Spigot! Works with the Minecraft versions 1.8.x to 1.18.x.</description>
+    <description>A simple spawnpoint plugin for Spigot. Works with the Minecraft versions 1.8.x to 1.18.x.</description>
     <url>https://www.spigotmc.org/resources/spawnpoint-plugin-1-8-x-1-18-x.96749/</url>
     <inceptionYear>2021</inceptionYear>
 
