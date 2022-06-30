@@ -70,9 +70,9 @@ public final class SetSpawnpointCommand implements CommandExecutor {
                     try {
 
                         config.set("data.spawnpoint.world", Bukkit.getWorld(((Player) commandSender).getWorld().getName()).getName());
-                        config.set("data.spawnpoint.x", Integer.parseInt(args[0]));
-                        config.set("data.spawnpoint.y", Integer.parseInt(args[1]));
-                        config.set("data.spawnpoint.z", Integer.parseInt(args[2]));
+                        config.set("data.spawnpoint.x", Double.parseDouble(args[0]));
+                        config.set("data.spawnpoint.y", Double.parseDouble(args[1]));
+                        config.set("data.spawnpoint.z", Double.parseDouble(args[2]));
 
                         SpawnpointPlugin.getPlugin().saveConfig();
 
@@ -99,9 +99,9 @@ public final class SetSpawnpointCommand implements CommandExecutor {
                     try {
 
                         config.set("data.spawnpoint.world", Bukkit.getWorld(args[0]).getName());
-                        config.set("data.spawnpoint.x", Integer.parseInt(args[1]));
-                        config.set("data.spawnpoint.y", Integer.parseInt(args[2]));
-                        config.set("data.spawnpoint.z", Integer.parseInt(args[3]));
+                        config.set("data.spawnpoint.x", Double.parseDouble(args[1]));
+                        config.set("data.spawnpoint.y", Double.parseDouble(args[2]));
+                        config.set("data.spawnpoint.z", Double.parseDouble(args[3]));
 
                         SpawnpointPlugin.getPlugin().saveConfig();
 
@@ -127,11 +127,11 @@ public final class SetSpawnpointCommand implements CommandExecutor {
                     try {
 
                         config.set("data.spawnpoint.world", Bukkit.getWorld(((Player) commandSender).getWorld().getName()).getName());
-                        config.set("data.spawnpoint.x", Integer.parseInt(args[0]));
-                        config.set("data.spawnpoint.y", Integer.parseInt(args[1]));
-                        config.set("data.spawnpoint.z", Integer.parseInt(args[2]));
-                        config.set("data.spawnpoint.yaw", Integer.parseInt(args[3]));
-                        config.set("data.spawnpoint.pitch", Integer.parseInt(args[4]));
+                        config.set("data.spawnpoint.x", Double.parseDouble(args[0]));
+                        config.set("data.spawnpoint.y", Double.parseDouble(args[1]));
+                        config.set("data.spawnpoint.z", Double.parseDouble(args[2]));
+                        config.set("data.spawnpoint.yaw", Double.parseDouble(args[3]));
+                        config.set("data.spawnpoint.pitch", Double.parseDouble(args[4]));
 
                         SpawnpointPlugin.getPlugin().saveConfig();
 
@@ -157,11 +157,11 @@ public final class SetSpawnpointCommand implements CommandExecutor {
                     try {
 
                         config.set("data.spawnpoint.world", Bukkit.getWorld(args[0]).getName());
-                        config.set("data.spawnpoint.x", Integer.parseInt(args[1]));
-                        config.set("data.spawnpoint.y", Integer.parseInt(args[2]));
-                        config.set("data.spawnpoint.z", Integer.parseInt(args[3]));
-                        config.set("data.spawnpoint.yaw", Integer.parseInt(args[4]));
-                        config.set("data.spawnpoint.pitch", Integer.parseInt(args[5]));
+                        config.set("data.spawnpoint.x", Double.parseDouble(args[1]));
+                        config.set("data.spawnpoint.y", Double.parseDouble(args[2]));
+                        config.set("data.spawnpoint.z", Double.parseDouble(args[3]));
+                        config.set("data.spawnpoint.yaw", Double.parseDouble(args[4]));
+                        config.set("data.spawnpoint.pitch", Double.parseDouble(args[5]));
 
                         SpawnpointPlugin.getPlugin().saveConfig();
 
